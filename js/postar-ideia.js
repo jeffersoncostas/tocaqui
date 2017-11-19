@@ -344,6 +344,7 @@ function postarIdeia() {
 	function adicionarIdeiaUsuarioServidor(idIdeia, idusuario) {
 
 		console.log('entrei no adicionar ideia usuario')
+
 		$.ajax({
 			data: '{"some":"json"}',
 			dataType: 'json',
@@ -377,6 +378,7 @@ function postarIdeia() {
 							},
 							url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/' + id2,
 							success: function () {
+								x
 
 								console.log('ideia adicionada no usuario!');
 
@@ -388,7 +390,7 @@ function postarIdeia() {
 
 								window.location.replace("explorar.html");
 
-								break
+
 							}
 						});
 
