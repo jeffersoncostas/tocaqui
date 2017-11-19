@@ -357,7 +357,7 @@ function postarIdeia() {
 
 						let id2 = data[i].id
 						let data2 = data[i].minhasIdeias
-
+						console.log(data2)
 						$.ajax({
 							data: '{"some":"json"}',
 							dataType: 'json',
@@ -384,7 +384,7 @@ function postarIdeia() {
 									.css("display", "flex")
 									.fadeOut();
 
-								window.location.replace("explorar.html")
+								window.location.replace("explorar.html");
 
 							}
 						});
