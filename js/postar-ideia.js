@@ -361,6 +361,7 @@ function postarIdeia() {
 						let id2 = data[i].id
 						let data2 = data[i].minhasIdeias
 						console.log(data2)
+
 						$.ajax({
 							data: '{"some":"json"}',
 							dataType: 'json',
@@ -378,7 +379,7 @@ function postarIdeia() {
 							},
 							url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/' + id2,
 							success: function () {
-								x
+
 
 								console.log('ideia adicionada no usuario!');
 
