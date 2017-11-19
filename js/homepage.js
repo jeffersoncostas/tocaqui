@@ -30,8 +30,6 @@ if ('serviceWorker' in navigator) {
 
 
 
-
-
 }
 
 
@@ -272,7 +270,7 @@ function logarModalLogin() {
 
 	$.ajax({
 		data: '{"some":"json"}',
-		dataType: 'json',
+			dataType: 'json',
 		type: 'GET',
 		url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/',
 		success: function (data) {

@@ -281,9 +281,8 @@ function postarIdeia() {
 
 	function requiEnviarIdeia() {
 		$.ajax({
-			crossOrigin: true,
-
-			crossDomain: true,
+			data: '{"some":"json"}',
+			dataType: 'json',
 			type: 'GET',
 			url: 'http://rest.learncode.academy/api/tocaqui/teste-ideias6/',
 			success: function (data) {
@@ -301,8 +300,8 @@ function postarIdeia() {
 
 	function enviarAoserv(idIdeia) {
 		$.ajax({
-
-			crossDomain: true,
+			data: '{"some":"json"}',
+			dataType: 'json',
 			type: 'POST',
 			url: 'http://rest.learncode.academy/api/tocaqui/teste-ideias6/',
 			data: {
@@ -344,9 +343,8 @@ function postarIdeia() {
 
 	function adicionarIdeiaUsuarioServidor(idIdeia, idusuario) {
 		$.ajax({
-			crossOrigin: true,
-
-			crossDomain: true,
+			data: '{"some":"json"}',
+			dataType: 'json',
 			type: 'GET',
 			url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/',
 			success: function (data) {
@@ -361,7 +359,8 @@ function postarIdeia() {
 						let data2 = data[i].minhasIdeias
 
 						$.ajax({
-							crossDomain: true,
+							data: '{"some":"json"}',
+							dataType: 'json',
 							type: 'PUT',
 							data: {
 								'idUser': data[i].idUser,
