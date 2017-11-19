@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Tocaqui! | Meu perfil</title>
-	<link rel="stylesheet" href="css/ideia.css">
+	<link rel="stylesheet" href="css/explorar.css">
 	<link rel="stylesheet" href="css/perfil.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#362c2b">
@@ -15,16 +15,25 @@
 	<!--Menu sanduiche-->
 	<div class="menu-modal">
 
-		<div class="logo-simbolo"><img src="vectors/toca-aqui-logo-simbolo.svg" alt=""></div>
+		<div class="logo-simbolo"><img src="vectors/user-white.svg" alt=""></div>
+		<div class="user-name-menu"></div>
 
 		<ul id="ul-menu">
-			<li id='button-cadastrar'>explorar ideias</li>
-			<li>minhas ideias</li>
-			<li>postar nova ideia</li>
-			<li>ideias que eu participo</li>
-			<li>mensagens</li>
 
-			<li>sobre</li>
+			<li id='explorar-ideias'>Explorar ideias</li>
+			<li id='button-minhas-ideias'>Minhas ideias</li>
+
+			<ul id='ul-minhas-ideias'>
+				<li id="button-li-postar-nova-ideia" class="li-minhas-ideias">
+					Postar nova ideia
+				</li>
+				<li class="li-minhas-ideias">Ideias que participo</li>
+			</ul>
+			<li id="button-li-mensagens">Mensagens</li>
+
+			<li>Sobre</li>
+			<li id="button-sair">Sair</li>
+
 		</ul>
 	</div>
 	<div class="menu-modal-bg"></div>
@@ -74,7 +83,7 @@
 
 			<div class="sobre" id="sobre">
 				<span>Amo cozinhar, aprendi com miha mãe. Já trabalhei 
-						em alguns restaurantes, mas antes nunca pude fazer parte de um 
+						em alguns restaurantes, mas nunca pude fazer parte de um 
 						negócio onde todos são tratados iguais, agora eu posso!</span>
 			</div>
 

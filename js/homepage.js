@@ -37,11 +37,12 @@ if ('serviceWorker' in navigator) {
 
 if (localStorage.userData == null) {
 
+	localStorage.userData
 	console.log("não ta logado")
 
 } else {
-
-	window.location.replace("explorar.html")
+	localStorage.userData
+	//window.location.replace("explorar.html")
 
 }
 
