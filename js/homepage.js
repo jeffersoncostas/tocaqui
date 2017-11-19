@@ -22,6 +22,21 @@
 
 // service worker pwa
 
+if ('serviceWorker' in navigator) {
+
+	navigator.serviceWorker.register('sw.js')
+		.then(function () {
+
+
+				console.log('sw registrado')
+			}
+
+
+
+		)
+
+
+}
 
 
 // logar com localstorage
@@ -660,30 +675,12 @@ function requisicaoCadastrar(fullName, email, password) {
 
 				};
 
-				//setTimeout(mudarlink, 700)
+				setTimeout(mudarlink, 700)
 
 
 			}
 		});
 	}
-
-
-}
-
-
-
-if ('serviceWorker' in navigator) {
-
-	navigator.serviceWorker.register('sw.js')
-		.then(function () {
-
-
-				console.log('sw registrado')
-			}
-
-
-
-		)
 
 
 }
