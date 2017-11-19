@@ -342,6 +342,8 @@ function postarIdeia() {
 
 
 	function adicionarIdeiaUsuarioServidor(idIdeia, idusuario) {
+
+		console.log('entrei no adicionar ideia usuario')
 		$.ajax({
 			data: '{"some":"json"}',
 			dataType: 'json',
