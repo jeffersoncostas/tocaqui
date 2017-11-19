@@ -24,7 +24,7 @@
 
 if ('serviceWorker' in navigator) {
 
-	navigator.serviceWorker.register('/sw.js')
+	navigator.serviceWorker.register('sw.js')
 
 
 
@@ -270,7 +270,7 @@ function logarModalLogin() {
 
 	$.ajax({
 		data: '{"some":"json"}',
-			dataType: 'json',
+		dataType: 'json',
 		type: 'GET',
 		url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/',
 		success: function (data) {
