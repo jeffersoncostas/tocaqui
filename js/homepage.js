@@ -362,6 +362,7 @@ function logarModalLogin() {
 
 // Realizar cadastro
 
+
 function aparecerPrimeiraMsg() {
 	bpTocaqui[0].style.display = 'flex'
 	bpTocaqui[0].style.animationName = 'aparecer-msg-cadastro'
@@ -394,11 +395,11 @@ inputCadastrarBp.addEventListener('click', mobileScrollTeclado)
 buttonEnviarModalCadastro.addEventListener('click', enviarNomeEmail)
 
 function mobileScrollTeclado() {
-	function scroll1() {
-		modalCadastrar.scrollTop = modalCadastrar.scrollHeight;
 
-	}
-	setTimeout(scroll1, 500)
+	modalCadastrar.scrollTop = modalCadastrar.scrollHeight;
+
+
+
 }
 
 function enviarPorEnter(event) {
