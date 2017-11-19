@@ -386,6 +386,7 @@ function postarIdeia() {
 
 								window.location.replace("explorar.html");
 
+								break
 							}
 						});
 
