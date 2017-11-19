@@ -1,0 +1,825 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+}
+
+
+@font-face {
+	font-family: 'quicksand';
+	src: url("font/Quicksand-Regular.otf");
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'karla';
+	src: url("font/Karla-Regular.ttf");
+	font-style: normal;
+}
+
+body {
+	font-family: 'quicksand'
+}
+
+/*loading*/
+
+.loadings {
+	z-index: 15;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	display: none;
+	justify-content: center;
+}
+
+.loading-circle {
+	align-self: center;
+	z-index: 16;
+	position: absolute;
+	border-top: 5px solid #FF286D;
+	border-right: 5px solid #FF286D;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+
+	animation-fill-mode: backwards;
+	animation-duration: 2s;
+	animation-name: loading;
+	animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+	0% {
+		transform: rotate(0deg)
+	}
+	100% {
+		transform: rotate(360deg)
+	}
+
+}
+
+.loading-background {
+	width: 100%;
+	position: fixed;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, 0.74);
+}
+
+
+/*Modal cadastrar*/
+
+.modal-cadastrar {
+	overflow: auto;
+	box-sizing: border-box;
+	display: none;
+	z-index: 3;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	padding: 60px 20px;
+	background-color: #ededed;
+	transition: all 0.7s;
+
+	transform: translateX(-500px);
+
+	animation-duration: 0.6s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-name: surgir-menu-modal;
+
+}
+
+#close-modalcadastrar {
+	user-select: none;
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 5;
+	display: flex;
+	font-size: 30px;
+	position: absolute;
+	right: 20px;
+	top: 70px;
+	justify-content: center;
+	color: white;
+	width: 50px;
+	height: 50px;
+	background-color: #FF286D;
+
+}
+
+#close-modalcadastrar span {
+	position: absolute;
+	top: 10%;
+}
+
+
+/*Logar ou cadastrar*/
+
+.modal-login-ou-cadastrar {
+	display: flex;
+	box-sizing: border-box;
+	justify-content: center;
+	z-index: 3;
+	position: absolute;
+	left: 0;
+	background-color: #362c2b;
+	width: 100%;
+	height: calc(100vh - 60px);
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+
+}
+
+
+.button-ja-possui-conta,
+.button-nao-possui-conta {
+	user-select: none;
+	cursor: pointer;
+	z-index: 4;
+	align-self: center;
+	display: flex;
+	justify-content: center;
+	box-sizing: border-box;
+	width: 60%;
+	height: 100px;
+	padding: 20px;
+	margin: 7px;
+	background-color: #554342;
+	border: 2px solid #FFAC1C;
+	font-size: 19px;
+	color: white;
+	border-radius: 5px;
+
+
+
+
+}
+
+.button-ja-possui-conta span,
+.button-nao-possui-conta span {
+	text-align: center;
+	align-self: center;
+}
+
+.button-nao-possui-conta {
+	border: 2px solid #FF286D;
+
+
+
+}
+
+@keyframes desaparecer-cima {
+	0% {
+		opacity: 1;
+		transform: translate(1px, 1%)
+	}
+
+	100% {
+		opacity: 0;
+		transform: translate(1px, -10%)
+	}
+
+}
+
+
+
+/**/
+
+/* Login */
+
+.modal-login {
+	display: none;
+	left: 0;
+	box-sizing: border-box;
+	justify-content: center;
+	z-index: 2;
+	position: absolute;
+	background-color: #ededed;
+	width: 100%;
+	height: calc(100vh - 60px);
+	padding: 0px 20px;
+
+
+}
+
+.content-modal-login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 110px 20px;
+}
+
+.content-modal-login form {
+	width: 100%;
+}
+
+.content-modal-login form input {
+	display: block;
+	font-size: 16px;
+
+	box-sizing: border-box;
+	border: none;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	width: 100%;
+	height: 70px;
+
+	padding: 0px 110px 0px 70px;
+	background-image: url('../vectors/senha-usuario.svg');
+	background-size: 50px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+}
+
+.content-modal-login form input:first-child {
+	margin-bottom: 50px;
+	background-image: url('../vectors/email-usuario.svg');
+
+}
+
+.erros-modal-login {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	background-color: #f8253d;
+	display: none;
+	border: 2px solid white;
+	;
+	color: white;
+	margin-bottom: 20px;
+
+}
+
+.erros-modal-login span {
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 17px;
+}
+
+.button-content-login {
+
+	cursor: pointer;
+	user-select: none;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background-color: #FFAC1C;
+	color: white;
+	height: 80px;
+	font-size: 23px;
+}
+
+.button-content-login span {
+	font-variant-caps: all-small-caps;
+	align-self: center;
+
+}
+
+
+/**/
+
+.titulo-cadastro {
+	font-size: 24px;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 30px;
+	width: 100%;
+	height: 80px;
+	border-bottom: 2px solid #FFAC1C;
+}
+
+.cadastro-bp {
+	overflow: auto;
+	box-sizing: border-box;
+	padding: 30px 0px;
+	width: 100%;
+	height: 70%;
+}
+
+.bp-tocaqui {
+	position: relative;
+	display: none;
+	margin-bottom: 40px;
+	animation-duration: 0.7s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: 1;
+
+}
+
+@keyframes aparecer-msg-cadastro {
+	0% {
+		opacity: 0;
+		transform: translate(0px, 20px);
+
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0px, 0px);
+
+	}
+
+}
+
+
+.bp-tocaqui .cadastro-img-tocaqui img {
+	width: 30%;
+}
+
+
+
+.bp-tocaqui .cadastro-conversa {
+	position: absolute;
+	align-self: center;
+	left: 50px;
+	background-color: #c3c3c3;
+	padding: 20px;
+	border-radius: 5px;
+	display: inline-flex;
+
+
+}
+
+.bp-tocaqui-user {
+	position: relative;
+	display: flex;
+	margin-bottom: 40px;
+	animation-duration: 0.7s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: 1;
+}
+
+.cadastro-conversa2 {
+	color: white;
+	position: absolute;
+	align-self: center;
+	left: 50px;
+	padding: 20px;
+	border-radius: 5px;
+	display: inline-flex;
+	background-color: #FFAC1C;
+
+}
+
+.bp-tocaqui-user .cadastro-img-tocaqui2 img {
+	width: 30%;
+}
+
+.modal-cadastrar #form-input-cadastrar {
+	position: relative;
+	bottom: -50px;
+	box-sizing: border-box;
+	justify-content: center;
+	width: 100%;
+}
+
+.modal-cadastrar #form-input-cadastrar input {
+	box-sizing: border-box;
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 70px;
+	font-size: 16px;
+	border: none;
+	border-radius: 5px;
+	padding: 0px 110px 0px 70px;
+	background-image: url('../vectors/nome-usuario-icon.svg');
+
+	background-size: 50px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px 10px
+}
+
+.button-enviar-modal-cadastro {
+	user-select: none;
+	text-align: center;
+	width: 100px;
+	cursor: pointer;
+	font-size: 24px;
+	position: absolute;
+	right: 30px;
+	top: 30%;
+}
+
+/*Barra de pesquisa*/
+
+.barra-pesquisa {
+	z-index: 3;
+	width: 100%;
+	height: 150px;
+	background-color: #ededed;
+	position: fixed;
+	justify-content: center;
+	align-items: center;
+	transform: translateY(-100%);
+	transition: all 0.7s;
+
+}
+
+.barra-pesquisa-active {
+	transform: translateY(60px);
+}
+
+.barra-pesquisa span {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	padding: 20px;
+}
+
+.barra-pesquisa form {
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+
+}
+
+.barra-pesquisa form input {
+	box-sizing: border-box;
+	border-radius: 5px;
+	padding: 0px 50px;
+	box-sizing: border-box;
+
+	width: calc(100% - 40px);
+	height: 40%;
+	border: none;
+	background-image: url(../vectors/lupa-pesquisar-rosa.svg);
+	background-repeat: no-repeat;
+	background-size: 30px;
+
+	background-position: 10px, 50%;
+}
+
+
+.bg-barra-pesquisa {
+	display: none;
+	z-index: 2;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.71);
+
+}
+
+/* Menu sanduiche*/
+
+.menu-modal-bg {
+	display: none;
+	z-index: 9;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.71);
+}
+
+.menu-modal {
+	box-sizing: border-box;
+	user-select: none;
+	flex-wrap: wrap;
+	padding-top: 20px;
+	display: none;
+	z-index: 10;
+	position: fixed;
+	width: 70%;
+	height: 100vh;
+	transform: translateX(-500px);
+	background-color: #392e2d;
+	animation-duration: 0.6s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-name: surgir-menu-modal;
+}
+
+
+@keyframes surgir-menu-modal {
+	from {
+		transform: translateX(-100%)
+	}
+	to {
+		transform: translateX(0px)
+	}
+}
+
+@keyframes fechar-menu-modal {
+	to {
+		transform: translateX(-100%)
+	}
+	from {
+		transform: translateX(0px)
+	}
+}
+
+
+
+.logo-simbolo {
+	display: flex;
+	width: 100%;
+	height: 90px;
+	justify-content: center;
+}
+
+.logo-simbolo img {
+
+	width: 90px;
+	height: 90px;
+}
+
+.menu-modal #ul-menu {
+	position: absolute;
+	top: 140px;
+	width: 100%;
+	list-style: none;
+
+}
+
+.menu-modal #ul-menu li {
+	user-select: none;
+	cursor: pointer;
+	box-sizing: border-box;
+	padding: 20px 50px;
+	font-size: 15px;
+	color: white;
+}
+
+.menu-modal #ul-menu li:first-child {
+	background-color: #FF286D;
+}
+
+
+/*barra horizontal*/
+
+.barra-cima {
+	z-index: 4;
+	user-select: none;
+	box-sizing: border-box;
+	padding: 0px 20px;
+	position: fixed;
+	display: flex;
+	width: 100vw;
+	height: 60px;
+	background-color: #362c2b;
+}
+
+.barra-cima .menu-1 {
+	user-select: none;
+	z-index: 1;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	color: white;
+	font-size: 25px;
+
+}
+
+.barra-cima .logo-tocaqui {
+
+	box-sizing: border-box;
+	display: flex;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+
+
+}
+
+.barra-cima .logo-tocaqui img {
+	height: 40px;
+	align-self: center;
+
+}
+
+.barra-cima .pesquisar {
+	user-select: none;
+	display: flex;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+}
+
+.barra-cima .pesquisar img {
+	user-select: none;
+	cursor: pointer;
+	padding-right: 20px;
+	position: absolute;
+	right: 0;
+	align-self: center;
+	height: 25px;
+
+}
+
+/* slider principal*/
+
+.slider-principal {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	padding-top: 60px;
+	width: 100%;
+	background-color: black;
+	height: calc(100vh - 60px);
+}
+
+.slider-principal .text-slider {
+
+	box-sizing: border-box;
+	padding: 20px;
+	z-index: 1;
+	position: absolute;
+	bottom: 10%;
+}
+
+.slider-principal .text-slider span {
+	color: white;
+	font-size: 24px;
+}
+
+.slider-principal .buttons-slider {
+
+	padding-top: 20px;
+}
+
+.slider-principal .button-publicar {
+	cursor: pointer;
+
+	border-radius: 5px;
+	padding: 10px;
+	width: calc(45% - 20px);
+	height: 50px;
+	display: inline-flex;
+	background-color: #FF286D;
+	justify-content: center;
+
+}
+
+.slider-principal .button-publicar span {
+	font-size: 17px;
+	align-self: center;
+}
+
+.slider-principal .button-explorar {
+	cursor: pointer;
+	border-radius: 5px;
+	padding: 10px;
+	width: calc(50% - 20px);
+	height: 50px;
+	display: inline-flex;
+	background-color: #FFAC1C;
+	justify-content: center;
+}
+
+.slider-principal .button-explorar span {
+	font-size: 17px;
+	align-self: center;
+}
+
+
+.slider-principal .dark-image {
+	position: absolute;
+	width: 100%;
+	height: calc(100vh - 60px);
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.28));
+}
+
+.slider-principal .imagens-slider {
+	width: 100%;
+	height: 100%;
+
+	background-image: url(../img/tocaqui2.png);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: -300px, 0px;
+}
+
+/* Oq pode fazer no tocaqui*/
+
+.content-2 {
+	box-sizing: border-box;
+	padding: 25px 15px;
+	border-top: solid 5px #FFAC1C;
+	width: 100%;
+	height: auto;
+	background-color: #efefef;
+}
+
+.content-2 #titulo-do-all {
+
+	text-align: center;
+	color: #141414;
+	font-size: 24px;
+	margin-bottom: 25px;
+
+}
+
+.can-do {
+	font-family: karla;
+	text-align: center;
+	box-sizing: border-box;
+	border-radius: 5px;
+	justify-content: center;
+	background-color: white;
+	width: 100%;
+	height: 250px;
+	padding: 20px;
+	margin-bottom: 20px;
+
+}
+
+.can-do .img-do {
+	box-sizing: border-box;
+	width: 100%;
+	height: 50%;
+	display: flex;
+	justify-content: center;
+	padding-top: 20px;
+	margin-bottom: 0px;
+}
+
+.can-do .img-do img {
+	height: 80%;
+}
+
+
+.can-do .title-do {
+	margin-bottom: 10px;
+
+	display: block;
+	width: 100%;
+	font-size: 24px;
+}
+
+#text-do {
+	color: #4d4d4d;
+}
+
+#text-do span {
+	color: #FFAC1C;
+}
+
+
+/*Footer*/
+
+footer {
+	box-sizing: border-box;
+	font-family: karla;
+	text-align: center;
+	height: 150px;
+	background-color: #362c2b;
+
+}
+
+footer .imagem-footer {
+	display: flex;
+	height: auto;
+	justify-content: center;
+
+}
+
+footer .imagem-footer img {
+	width: 40%
+}
+
+footer span {
+	font-size: 13px;
+	color: white;
+}
+
+/*MEDIA QUERY  HOMEPAGE*/
+
+/*Media para o slider de imagens*/
+
+@media screen and (min-width: 852px) {
+
+	.slider-principal .imagens-slider {
+
+		width: 100%;
+		height: 100%;
+
+		background-image: url(../img/tocaqui2.png);
+		background-repeat: no-repeat;
+		background-attachment: scroll;
+		background-size: cover;
+		background-position: 0px, 0px;
+
+
+
+	}
+
+}

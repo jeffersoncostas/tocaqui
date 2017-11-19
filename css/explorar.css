@@ -1,0 +1,664 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+}
+
+
+@font-face {
+	font-family: quicksand;
+	src: url("font/Quicksand-Regular.otf");
+	font-style: normal;
+}
+
+@font-face {
+	font-family: karla;
+	src: url("font/Karla-Regular.ttf");
+	font-style: normal;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: 'quicksand';
+	height: 100%;
+}
+
+/**/
+
+/*loading*/
+
+.loadings {
+	z-index: 15;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+
+.loading-circle {
+	align-self: center;
+	z-index: 16;
+	position: absolute;
+	border-top: 5px solid #FF286D;
+	border-right: 5px solid #FF286D;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+
+	animation-fill-mode: backwards;
+	animation-duration: 2s;
+	animation-name: loading;
+	animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+	0% {
+		transform: rotate(0deg)
+	}
+	100% {
+		transform: rotate(360deg)
+	}
+
+}
+
+.loading-background {
+	width: 100%;
+	position: fixed;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, 0.74);
+}
+
+/*Barra de pesquisa*/
+
+.barra-pesquisa {
+
+	display: none;
+	z-index: 4;
+	width: 100%;
+	height: 120px;
+	background-color: #ededed;
+	position: fixed;
+	justify-content: center;
+	align-items: center;
+	transform: translateY(-60px);
+	transition: all 0.7s;
+
+}
+
+.barra-pesquisa-active {
+	transform: translateY(60px);
+}
+
+.barra-pesquisa span {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	padding: 20px;
+}
+
+.barra-pesquisa form {
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+
+}
+
+.barra-pesquisa form input {
+
+	border-radius: 5px;
+	padding: 0px 50px;
+	box-sizing: border-box;
+
+	width: calc(100% - 40px);
+	height: 40%;
+	border: none;
+	background-image: url(../vectors/lupa-pesquisar-rosa.svg);
+	background-repeat: no-repeat;
+	background-size: 30px;
+
+	background-position: 10px, 50%;
+}
+
+
+.bg-barra-pesquisa {
+	display: none;
+	z-index: 2;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.71);
+
+
+}
+
+/**/
+
+/* Menu sanduiche*/
+
+.menu-modal-bg {
+	display: none;
+	z-index: 9;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.71);
+}
+
+.menu-modal {
+	box-sizing: border-box;
+	user-select: none;
+	padding-top: 20px;
+	display: none;
+	z-index: 10;
+	position: fixed;
+	width: 70%;
+	height: 100vh;
+	transform: translateX(-500px);
+	background-color: #392e2d;
+	animation-duration: 0.6s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-name: surgir-menu-modal;
+}
+
+
+@keyframes surgir-menu-modal {
+	from {
+		transform: translateX(-100%)
+	}
+	to {
+		transform: translateX(0px)
+	}
+}
+
+@keyframes fechar-menu-modal {
+	to {
+		transform: translateX(-100%)
+	}
+	from {
+		transform: translateX(0px)
+	}
+}
+
+
+
+.logo-simbolo {
+
+	display: flex;
+	width: 100%;
+	height: 90px;
+	justify-content: center;
+}
+
+.logo-simbolo img {
+
+	width: 90px;
+	height: 90px;
+
+}
+
+.user-name-menu {
+	position: absolute;
+	top: 110px;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 50px;
+	color: white;
+	text-align: center;
+}
+
+.user-name-menu span {
+	align-self: center;
+}
+
+.menu-modal #ul-menu {
+	position: absolute;
+	top: 170px;
+	width: 100%;
+	list-style: none;
+
+}
+
+.menu-modal #ul-menu li {
+	cursor: pointer;
+	box-sizing: border-box;
+	padding: 20px 20px 20px 80px;
+	font-size: 15px;
+	color: white;
+}
+
+.menu-modal #ul-menu #explorar-ideias {
+	background-color: #FF286D;
+	background-image: url('../vectors/explorar-icon-white.svg');
+	background-repeat: no-repeat;
+	background-size: 45px;
+	background-position: 10px, 50%;
+}
+
+#button-minhas-ideias {
+	background-image: url('../vectors/lampada-icon-white.svg');
+	background-repeat: no-repeat;
+	background-size: 30px;
+	background-position: 15px, 50%;
+
+}
+
+#button-li-mensagens {
+	background-image: url('../vectors/chat-icon-white.svg');
+	background-repeat: no-repeat;
+	background-size: 40px;
+	background-position: 10px, 50%;
+
+}
+
+#ul-minhas-ideias {
+	display: none;
+}
+
+#ul-minhas-ideias .li-minhas-ideias {
+	background-color: #504140;
+
+
+}
+
+
+/**/
+
+/*barra horizontal*/
+
+.barra-cima {
+	z-index: 4;
+	user-select: none;
+	box-sizing: border-box;
+	padding: 0px 20px;
+	position: fixed;
+	display: flex;
+	width: 100vw;
+	height: 60px;
+	background-color: #362c2b;
+}
+
+.barra-cima .menu-1 {
+	font-family: arial;
+	z-index: 1;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	color: white;
+	font-size: 25px;
+
+}
+
+.barra-cima .logo-tocaqui {
+
+	box-sizing: border-box;
+	display: flex;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+
+
+}
+
+.barra-cima .logo-tocaqui img {
+	height: 40px;
+	align-self: center;
+
+}
+
+.barra-cima .pesquisar {
+
+	display: flex;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+}
+
+.barra-cima .pesquisar img {
+	cursor: pointer;
+	padding-right: 20px;
+	position: absolute;
+	right: 0;
+	align-self: center;
+	height: 25px;
+
+
+}
+
+/**/
+
+/*Explorar ideias - categorias*/
+
+.categorias {
+	z-index: 3;
+	overflow: hidden;
+	box-sizing: border-box;
+	position: fixed;
+	padding: 80px 20px 20px;
+	height: 100vh;
+	width: 100%;
+	background-color: #362c2b;
+	color: white;
+	max-height: 120px;
+	transition: all 0.7s;
+}
+
+.categorias-expandir {
+	z-index: 3;
+
+	overflow: auto;
+	box-sizing: border-box;
+	position: fixed;
+	padding: 80px 20px 20px;
+	height: 100vh;
+	width: 100%;
+	background-color: #f4f4f4;
+	color: black;
+	transition: all 0.7s;
+	max-height: 1500px;
+
+}
+
+.button-ok-categorias {
+	user-select: none;
+	cursor: pointer;
+	display: none;
+	justify-content: center;
+	background-color: #FF286D;
+	color: white;
+	font-size: 20px;
+	border-radius: 50%;
+	height: 70px;
+	width: 70px;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.28);
+}
+
+.button-ok-categorias span {
+	align-self: center;
+
+}
+
+.title-categorias {
+	cursor: pointer;
+	display: flex;
+	width: 100%;
+	font-size: 24px;
+	margin-bottom: 20px;
+	justify-content: center;
+
+}
+
+.expandir-icon {
+	display: inline-block;
+	align-self: center;
+	background-image: url(../vectors/expandir-icon.svg);
+	background-repeat: no-repeat;
+	filter: hue-rotate();
+	margin-left: 30px;
+	height: 25px;
+	width: 25px;
+	background-position: 0;
+
+}
+
+#lista-categorias {
+	font-family: karla;
+	width: 100%;
+	list-style: none;
+	margin-bottom: 10px;
+}
+
+#lista-categorias span {
+	color: #959595;
+	display: block;
+	margin-bottom: 10px;
+}
+
+#lista-categorias li {
+	display: block;
+	box-sizing: border-box;
+	padding: 0px 20px 14px;
+	font-size: 16px;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+label:before {
+	content: '';
+	background: transparent;
+	border: 2px solid #AEAEAE;
+	border-radius: 3px;
+	height: 20px;
+	width: 20px;
+	text-align: center;
+	display: inline-block;
+	margin-right: 10px;
+
+}
+
+input[type="checkbox"]:checked + label:before {
+	content: '✓';
+	color: #00BBC6;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+
+/**/
+
+/*content-all*/
+
+/* Lista de ideias*/
+
+.lista-ideias {
+	box-sizing: border-box;
+	padding: 120px 20px 20px;
+	overflow: auto;
+	margin-bottom: 60px;
+
+}
+
+.titulo-lista-ideia {
+	display: flex;
+	justify-content: center;
+	height: 60px;
+	font-size: 24px;
+	text-align: center;
+	border-bottom: 2px solid #FFAC1C;
+	margin-bottom: 20px;
+}
+
+
+.lista-ideias .titulo-lista-ideia span {
+	align-self: center;
+}
+
+/**/
+
+/*ideia content*/
+
+.ideia-content {
+	border-radius: 5px;
+	font-family: karla;
+	box-sizing: border-box;
+	max-height: 60px;
+	overflow: hidden;
+	width: 100%;
+	padding: 20px;
+	background-color: #f4f4f4;
+	margin-bottom: 20px;
+	transition: all 0.7s;
+}
+
+.a-ideia-content {
+
+	border-radius: 5px;
+	font-family: karla;
+	box-sizing: border-box;
+	overflow: hidden;
+	width: 100%;
+	padding: 20px;
+	background-color: #f4f4f4;
+	margin-bottom: 20px;
+	transition: all 0.7s;
+	max-height: calc(100vh - 115px);
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.18);
+
+}
+
+
+
+.titulo-ideia-content {
+	user-select: none;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+
+.expandir-icon-2 {
+	display: inline-block;
+	align-self: center;
+	background-image: url(../vectors/expandir-icon.svg);
+	background-repeat: no-repeat;
+	margin-left: 50px;
+	height: 20px;
+	width: 20px;
+	background-position: 0;
+
+}
+
+.criador-ideia-content {
+	margin-bottom: 10px;
+}
+
+.criador-ideia-content span {
+	color: #FF286D;
+}
+
+.habilidade-criador-ideia-content {
+	margin-bottom: 20px;
+}
+
+.habilidade-criador-ideia-content span {
+	color: #191919;
+}
+
+.descricao-ideia-content {
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+
+.precisa-ideia-content {
+	font-size: 17px;
+	font-variant: small-caps;
+	margin-bottom: 10px
+}
+
+
+.precisa-ideia-content span {
+	color: #FFAC1C;
+	font-variant: small-caps;
+}
+
+.pessoas-ideia-content {
+	margin-bottom: 20px;
+}
+
+.pessoas-ideia-content span {
+	color: #1ebeae;
+	font-size: 17px;
+
+}
+
+.ver-mais-ideia-content {
+	user-select: none;
+	cursor: pointer;
+	margin-bottom: 20px;
+	text-align: center;
+	text-decoration: underline;
+	text-decoration: none;
+
+}
+
+.button-entrar-ideia-content {
+
+	cursor: pointer;
+	user-select: none;
+	border-radius: 2px;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background-color: #48D9CB;
+	height: 40px;
+	font-size: 23px;
+
+}
+
+a {
+	color: #6d6d6d;
+	text-decoration: none;
+}
+
+a:visited {
+	color: black;
+}
+
+.button-entrar-ideia-content span {
+
+	align-self: center;
+	font-variant: small-caps;
+	color: white;
+}
+
+
+
+/*Footer*/
+
+footer {
+	height: 50%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	box-sizing: border-box;
+	padding: 10px;
+	font-family: karla;
+	text-align: center;
+	width: 100%;
+	background-color: #362c2b;
+
+}
+
+footer .imagem-footer {
+	padding-top: 130px;
+	height: auto;
+	width: 100%;
+
+}
+
+footer .imagem-footer img {
+	max-width: 190px;
+}
+
+footer span {
+	font-size: 13px;
+	color: white;
+}
