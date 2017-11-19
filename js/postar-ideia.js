@@ -378,7 +378,7 @@ function postarIdeia() {
 								'ideiasParticipo': data[i].ideiasParticipo
 							},
 							url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/' + id2,
-							success: mudarDePagina();
+							success: mudarDePagina()
 						});
 
 
