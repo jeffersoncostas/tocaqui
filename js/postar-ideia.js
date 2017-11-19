@@ -378,21 +378,7 @@ function postarIdeia() {
 								'ideiasParticipo': data[i].ideiasParticipo
 							},
 							url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/' + id2,
-							success: function () {
-
-
-								console.log('ideia adicionada no usuario!');
-
-
-
-								$(".loadings")
-									.css("display", "flex")
-									.fadeOut();
-
-								window.location.replace("explorar.html");
-
-
-							}
+							success: mudarDePagina();
 						});
 
 
@@ -406,6 +392,20 @@ function postarIdeia() {
 
 			}
 		});
+
+
+		function mudarDePagina() {
+			console.log('ideia adicionada no usuario!');
+
+
+
+			$(".loadings")
+				.css("display", "flex")
+				.fadeOut();
+
+			window.location.replace("explorar.html");
+
+		}
 
 	}
 
