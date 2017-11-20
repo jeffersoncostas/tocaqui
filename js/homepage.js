@@ -389,7 +389,7 @@ inputCadastrarBp.addEventListener('keydown', function (event) {
 	enviarPorEnter(event)
 })
 
-inputCadastrarBp.addEventListener('click', mobileScrollTeclado)
+//inputCadastrarBp.addEventListener('click', mobileScrollTeclado)
 
 
 buttonEnviarModalCadastro.addEventListener('click', enviarNomeEmail)
