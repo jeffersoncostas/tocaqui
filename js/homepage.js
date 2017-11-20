@@ -323,7 +323,7 @@ function logarModalLogin() {
 								.fadeOut();
 
 							window.location.replace("explorar.html")
-
+							break
 
 						} else {
 
@@ -332,7 +332,7 @@ function logarModalLogin() {
 								.fadeOut();
 
 							window.location.replace("postar-ideia.html")
-
+							break
 						}
 
 					};
@@ -366,7 +366,7 @@ function logarModalLogin() {
 
 					mudarlink()
 
-					break
+
 				}
 			}
 
