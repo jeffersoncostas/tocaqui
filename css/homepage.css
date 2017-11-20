@@ -379,7 +379,6 @@ body {
 
 .modal-cadastrar #form-input-cadastrar {
 	position: relative;
-	bottom: -10%;
 	box-sizing: border-box;
 	justify-content: center;
 	width: 100%;
