@@ -259,7 +259,7 @@ function abrirModalLogina() {
 let modalContentLogin = document.querySelector('.modal-login');
 let buttonContentLogin = document.querySelector('.button-content-login');
 
-let loginInputPassword1 = document.querySelector('#login-input-password').;
+let loginInputPassword1 = document.querySelector('#login-input-password');
 
 buttonContentLogin.addEventListener('click', logarModalLogin);
 loginInputPassword1.addEventListener('click', mobileScrollTeclado2);
