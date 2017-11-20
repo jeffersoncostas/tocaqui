@@ -277,9 +277,10 @@ function logarModalLogin() {
 		success: function (data) {
 
 			for (let i = 0; i < data.length; i++) {
+				let saberSe = null;
 
 				if (data[i].email == loginInputEmail && data[i].senha == loginInputPassword) {
-
+					saberSe = 1;
 					console.log('logou')
 
 					let UserStorage = {
@@ -321,9 +322,7 @@ function logarModalLogin() {
 					};
 
 
-					mudarlink()
 
-					break
 
 
 
@@ -347,8 +346,15 @@ function logarModalLogin() {
 				}
 
 
+				if (saberSe == 1) {
 
+					mudarlink()
+
+					break
+				}
 			}
+
+
 
 		}
 	});
