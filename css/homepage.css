@@ -193,19 +193,21 @@ body {
 .modal-login {
 	display: none;
 	left: 0;
+	top: 80px;
 	box-sizing: border-box;
 	justify-content: center;
 	z-index: 2;
 	position: absolute;
 	background-color: #ededed;
 	width: 100%;
-	height: calc(100vh - 60px);
+	height: calc(100vh - 80px);
 	padding: 0px 20px;
 
 
 }
 
 .content-modal-login {
+	background-color: #ededed;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -240,7 +242,7 @@ body {
 }
 
 .content-modal-login form input:first-child {
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 	background-image: url('../vectors/email-usuario.svg');
 
 }

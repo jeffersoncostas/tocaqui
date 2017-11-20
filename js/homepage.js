@@ -259,7 +259,23 @@ function abrirModalLogina() {
 let modalContentLogin = document.querySelector('.modal-login');
 let buttonContentLogin = document.querySelector('.button-content-login');
 
+let loginInputPassword1 = document.querySelector('#login-input-password').;
+
 buttonContentLogin.addEventListener('click', logarModalLogin);
+loginInputPassword1.addEventListener('click', mobileScrollTeclado2);
+
+
+function mobileScrollTeclado2() {
+	function subir() {
+		modalContentLogin.scrollTop = modalContentLogin.scrollHeight;
+
+	}
+
+
+	setTimeout(subir, 1000)
+
+
+}
 
 function logarModalLogin() {
 	$(".loadings")
