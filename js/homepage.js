@@ -316,7 +316,7 @@ function logarModalLogin() {
 					console.log(localStorage.userData)
 
 					mudarlink()
-
+					break
 
 					function mudarlink() {
 
@@ -326,7 +326,6 @@ function logarModalLogin() {
 								.fadeOut();
 
 							window.location.replace("explorar.html")
-							break
 
 						} else {
 
@@ -335,7 +334,6 @@ function logarModalLogin() {
 								.fadeOut();
 
 							window.location.replace("postar-ideia.html")
-							break
 						}
 
 					};
