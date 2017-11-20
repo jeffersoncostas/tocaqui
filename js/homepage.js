@@ -264,6 +264,9 @@ let loginInputPassword1 = document.querySelector('#login-input-password');
 buttonContentLogin.addEventListener('click', logarModalLogin);
 loginInputPassword1.addEventListener('click', mobileScrollTeclado2);
 
+loginInputPassword1.addEventListener('keydown', function (event) {
+	enviarPorEnter2(event)
+})
 
 function mobileScrollTeclado2() {
 	function subir() {
@@ -381,6 +384,20 @@ function logarModalLogin() {
 
 }
 
+
+
+
+
+function enviarPorEnter2(event) {
+
+	if (event.which == 13 || event.which == 10) {
+
+		logarModalLogin()
+		event.stopImmediatePropagation();
+		event.preventDefault();
+	}
+
+}
 
 
 // Realizar cadastro
