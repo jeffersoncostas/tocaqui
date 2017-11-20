@@ -315,6 +315,9 @@ function logarModalLogin() {
 
 					console.log(localStorage.userData)
 
+					mudarlink()
+
+
 					function mudarlink() {
 
 						if (SaberExplorarPostar == 1) {
