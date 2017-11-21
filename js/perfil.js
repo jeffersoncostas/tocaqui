@@ -200,7 +200,7 @@ function alterarPaginaUserName() {
 
 	let habilidadesUsuario = document.querySelector("#habilidades-meu-perfil");
 
-	if (habilidadesUsuario.value == null) {
+	if (habilidadesUsuario.value == null || habilidadesUsuario.vaue = "") {
 
 		habilidadesUsuario.value = " quais suas habilidades?";
 	} else {
