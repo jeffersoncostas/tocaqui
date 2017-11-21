@@ -202,7 +202,7 @@ function alterarPaginaUserName() {
 
 	if (habilidadesUsuario.value == null) {
 
-		habilidadesUsuario.value = " quais suas habilidades?"
+		habilidadesUsuario.value = " quais suas habilidades?";
 	} else {
 
 		habilidadesUsuario.value = l2StorageUser.habilidades;
@@ -216,7 +216,7 @@ function alterarPaginaUserName() {
 	let sobreoUsuario = document.querySelector("#sobre-o-usuario");
 
 
-	if (sobreoUsuario == null) {
+	if (sobreoUsuario.value == null) {
 
 		sobreoUsuario.value = "conte um pouco sobre você..."
 	} else {
