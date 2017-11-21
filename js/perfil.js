@@ -137,3 +137,39 @@ projetos_que_to.addEventListener("click", function () {
 
 
 });
+
+// RESGATAR DADOS LOCALSTORAGE
+
+let userDataExplorar = JSON.parse(localStorage.userData);
+//
+//testar12()
+
+let lStorageUser = localStorage.userData = JSON.stringify(userDataExplorar)
+
+
+let l2StorageUser = JSON.parse(lStorageUser)
+
+if (localStorage.userData != null) {
+
+	console.log('entrei')
+	console.log(lStorageUser)
+
+	alterarPaginaUserName()
+
+} else {
+
+	window.location.replace("index.html")
+
+
+}
+
+
+function alterarPaginaUserName() {
+
+	let spanUserNameMenu = document.createElement('span')
+	let userNameMenu = document.querySelector('.user-name-menu')
+	let spanText = document.createTextNode(l2StorageUser.name)
+	spanUserNameMenu.appendChild(spanText)
+	userNameMenu.appendChild(spanUserNameMenu)
+
+}
