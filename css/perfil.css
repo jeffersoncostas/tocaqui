@@ -70,8 +70,8 @@
 .trabalho {
 	width: calc(100% - 90px);
 	position: absolute;
-	bottom: 20px;
-	right: 0;
+	bottom: 0px;
+	right: 0px;
 	font-size: 18px;
 	color: #ff276c;
 }
