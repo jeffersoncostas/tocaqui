@@ -317,6 +317,8 @@ function testar12() {
 
 }
 
+
+
 function alterarPaginaUserName() {
 
 	let spanUserNameMenu = document.createElement('span')
@@ -328,6 +330,15 @@ function alterarPaginaUserName() {
 }
 // APARECER IDEIAS
 function aparecer1() {
+
+
+
+
+
+
+
+
+
 	console.log('aparecer ideias');
 
 	$(".loadings")
@@ -341,9 +352,6 @@ function aparecer1() {
 		url: 'http://rest.learncode.academy/api/tocaqui/teste-ideias6/',
 		success: function (data) {
 
-			$(".loadings")
-				.css("display", "flex")
-				.fadeOut();
 
 			for (let i = 0; i < data.length; i++) {
 
@@ -356,11 +364,27 @@ function aparecer1() {
 
 
 				}
-				aparecerIdeiasPagina(data[i].nomeIdeia, data[i].nomeCriador, data[i].habilidadesCriador, data[i].descricaoDaIdeia, data[i].oqPrecisa, participantesContar, data[i].termometro)
+
+				if (l2StorageUser.minhasIdeias.includes(data[i].idIdeia)) {
+					console.log('contem minha ideia no exlorar')
+
+					aparecerIdeiaQueEminha(data[i].nomeIdeia, data[i].nomeCriador, data[i].habilidadesCriador, data[i].descricaoDaIdeia, data[i].oqPrecisa, participantesContar, data[i].termometro)
+
+				} else {
+					aparecerIdeiasPagina(data[i].nomeIdeia, data[i].nomeCriador, data[i].habilidadesCriador, data[i].descricaoDaIdeia, data[i].oqPrecisa, participantesContar, data[i].termometro)
+
+				}
+
+
+
+
 
 			}
 
 			expandirIdeiaAposRequis()
+			$(".loadings")
+				.css("display", "flex")
+				.fadeOut();
 
 		}
 	});
@@ -499,4 +523,137 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 
 }
 
-//
+
+
+function aparecerIdeiaQueEminha(titulo, criador, habilidades, descricao, precisaDe, pessoasPart, termometro) {
+
+	let ListaIdeias =
+		document.querySelector('.lista-ideias');
+
+	let ideiaContent = document.createElement('div')
+	ideiaContent.classList.add('ideia-content', 'ideia-my');
+
+	ListaIdeias.appendChild(ideiaContent);
+
+	// titulo e span titulo
+	let tituloIdeiaContent = document.createElement('div');
+	let tituloIdeiaContentSpan = document.createElement('span');
+	let spanTituloText = document.createTextNode(titulo);
+	let spanButton = document.createElement('span');
+
+	tituloIdeiaContentSpan.appendChild(spanTituloText);
+	tituloIdeiaContent.appendChild(tituloIdeiaContentSpan);
+	tituloIdeiaContent.appendChild(spanButton);
+
+	tituloIdeiaContent.classList.add('titulo-ideia-content');
+	spanButton.classList.add('expandir-icon-2');
+
+	ideiaContent.appendChild(tituloIdeiaContent);
+
+
+	//criador
+	let criadorIdeiaContent = document.createElement('div');
+	let criadorIdeiaContentSpan = document.createElement('span');
+	let spanCriadorIdeiaText = document.createTextNode(criador);
+	let TextNodeCriador = document.createTextNode('Ideia de ')
+
+	criadorIdeiaContentSpan.appendChild(spanCriadorIdeiaText);
+	criadorIdeiaContent.appendChild(TextNodeCriador);
+	criadorIdeiaContent.appendChild(criadorIdeiaContentSpan);
+
+	criadorIdeiaContent.classList.add('criador-ideia-content');
+
+	ideiaContent.appendChild(criadorIdeiaContent);
+
+
+	//habilidades do criador
+	let habilidadeCriadorIdeiaContent = document.createElement('div');
+	let habilidadeCriadorSpan = document.createElement('span');
+	let spanHabilidadeCriadorText = document.createTextNode(habilidades);
+	let TextNodeHabilidades = document.createTextNode('Habilidades com ')
+
+	habilidadeCriadorSpan.appendChild(spanHabilidadeCriadorText);
+	habilidadeCriadorIdeiaContent.appendChild(TextNodeHabilidades);
+	habilidadeCriadorIdeiaContent.appendChild(habilidadeCriadorSpan);
+
+	habilidadeCriadorIdeiaContent.classList.add("habilidade-criador-ideia-content")
+
+	ideiaContent.appendChild(habilidadeCriadorIdeiaContent);
+
+
+
+	// descricao da ideia
+	let descricaoIdeiaContent = document.createElement('div');
+	let descricaoIdeiaContentText = document.createTextNode(descricao);
+
+	descricaoIdeiaContent.appendChild(descricaoIdeiaContentText);
+
+	descricaoIdeiaContent.classList.add('descricao-ideia-content');
+
+	ideiaContent.appendChild(descricaoIdeiaContent);
+
+
+
+	//precisa de que ? ideia content
+	let precisaIdeiaContent = document.createElement('div');
+	let precisaIdeiaContentSpan = document.createElement('span');
+	let spanPrecisaIdeiaText = document.createTextNode(precisaDe);
+	let TextNodePrecisaIdeia = document.createTextNode('precisa de ')
+
+	precisaIdeiaContentSpan.appendChild(spanPrecisaIdeiaText);
+	precisaIdeiaContent.appendChild(TextNodePrecisaIdeia);
+	precisaIdeiaContent.appendChild(precisaIdeiaContentSpan);
+
+	precisaIdeiaContent.classList.add('precisa-ideia-content');
+
+	ideiaContent.appendChild(precisaIdeiaContent);
+
+
+
+	// pessoas participando
+	let pessoasIdeiaContent = document.createElement('div');
+	let pessoasIdeiaContentSpan = document.createElement('span');
+	let spanPessoasIdeiaContentText = document.createTextNode(pessoasPart);
+	let TextNodePessoasIdeia = document.createTextNode(' pessoas participando')
+
+	pessoasIdeiaContentSpan.appendChild(spanPessoasIdeiaContentText);
+	pessoasIdeiaContent.appendChild(pessoasIdeiaContentSpan);
+	pessoasIdeiaContent.appendChild(TextNodePessoasIdeia);
+
+	pessoasIdeiaContent.classList.add('pessoas-ideia-content');
+
+	ideiaContent.appendChild(pessoasIdeiaContent);
+
+
+
+
+	//ver mais , pagina da ideia 
+	let verMaisIdeiaContent = document.createElement('div');
+	let verMaisIdeiaContentLink = document.createElement('a');
+	let verMaisLinkText = document.createTextNode('Ver página da ideia');
+
+	verMaisIdeiaContentLink.href = "ideia.html";
+
+	verMaisIdeiaContentLink.appendChild(verMaisLinkText);
+	verMaisIdeiaContent.appendChild(verMaisIdeiaContentLink);
+
+	verMaisIdeiaContent.classList.add('ver-mais-ideia-content');
+
+
+	//ideiaContent.appendChild(verMaisIdeiaContent);
+
+	// botao entrar na ideia content 
+
+	let buttonEntrarIdeia = document.createElement('div');
+	let buttonEntrarIdeiaSpan = document.createElement('span');
+	let SpanButtonEntrarText = document.createTextNode('ver minha ideia');
+
+
+
+	buttonEntrarIdeiaSpan.appendChild(SpanButtonEntrarText);
+	buttonEntrarIdeia.appendChild(buttonEntrarIdeiaSpan);
+	buttonEntrarIdeia.classList.add('button-entrar-ideia-content', 'bttn-my')
+
+	ideiaContent.appendChild(buttonEntrarIdeia);
+
+}

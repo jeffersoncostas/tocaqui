@@ -495,6 +495,9 @@ input[type="checkbox"]:checked + label:before {
 /*ideia content*/
 
 .ideia-content {
+	color: black;
+	border: 2px solid rgba(180, 180, 180, 0.14);
+	border-bottom: 2px solid rgba(28, 176, 255, 0.28);
 	border-radius: 5px;
 	font-family: karla;
 	box-sizing: border-box;
@@ -502,12 +505,19 @@ input[type="checkbox"]:checked + label:before {
 	overflow: hidden;
 	width: 100%;
 	padding: 20px;
-	background-color: #f4f4f4;
+	background-color: rgba(248, 248, 248, 0.59);
 	margin-bottom: 20px;
 	transition: all 0.7s;
 }
 
+.ideia-my{
+	
+		border-bottom: 2px solid rgba(255, 40, 109, 0.3);
+
+}
+
 .a-ideia-content {
+	border: 2px solid rgba(180, 180, 180, 0);
 
 	border-radius: 5px;
 	font-family: karla;
@@ -526,6 +536,7 @@ input[type="checkbox"]:checked + label:before {
 
 
 .titulo-ideia-content {
+	position: relative;
 	user-select: none;
 	cursor: pointer;
 	font-size: 20px;
@@ -535,12 +546,14 @@ input[type="checkbox"]:checked + label:before {
 
 .expandir-icon-2 {
 	display: inline-block;
+	position: absolute;
+	right: 0;
 	align-self: center;
 	background-image: url(../vectors/expandir-icon.svg);
 	background-repeat: no-repeat;
 	margin-left: 50px;
-	height: 20px;
-	width: 20px;
+	height: 15px;
+	width: 15px;
 	background-position: 0;
 
 }
@@ -607,6 +620,20 @@ input[type="checkbox"]:checked + label:before {
 	justify-content: center;
 	width: 100%;
 	background-color: #48D9CB;
+	height: 40px;
+	font-size: 23px;
+
+}
+
+.bttn-my {
+
+	cursor: pointer;
+	user-select: none;
+	border-radius: 2px;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background-color: #FF286D;
 	height: 40px;
 	font-size: 23px;
 

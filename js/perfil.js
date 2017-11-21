@@ -255,7 +255,7 @@ if (localStorage.userData != undefined) {
 	l2StorageUser = JSON.parse(lStorageUser)
 
 	console.log('entrei')
-	console.log(lStorageUser)
+	console.log(l2StorageUser)
 
 	alterarPaginaUserName()
 
@@ -288,14 +288,20 @@ function alterarPaginaUserName() {
 
 	let habilidadesUsuario = document.querySelector("#habilidades-meu-perfil");
 
-	if (habilidadesUsuario.value == null || habilidadesUsuario.value == "") {
+	console.log(l2StorageUser.habilidades)
 
-		habilidadesUsuario.placeholder = " quais suas habilidades?";
-	} else {
+	if (l2StorageUser.habilidades.length >= 1) {
 
 		habilidadesUsuario.value = l2StorageUser.habilidades;
 
+	} else if (l2StorageUser.habilidades.length <= 0) {
+
+		console.log('hi')
+		habilidadesUsuario.placeholder = "quais suas habilidades?";
 	}
+
+
+
 
 
 
