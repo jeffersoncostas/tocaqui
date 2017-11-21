@@ -215,6 +215,7 @@ function alterarPaginaUserName() {
 
 	let sobreoUsuario = document.querySelector("#sobre-o-usuario");
 
+	console.log(sobreoUsuario.value);
 
 	if (sobreoUsuario.value == null) {
 
