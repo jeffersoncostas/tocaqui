@@ -144,6 +144,8 @@ projetos_que_to.addEventListener("click", function () {
 //.css("display", "flex")
 //	.fadeIn();
 
+
+
 let userDataExplorar = null;
 //
 
@@ -179,11 +181,19 @@ if (localStorage.userData != undefined) {
 
 function alterarPaginaUserName() {
 
+	// nome no menu
 	let spanUserNameMenu = document.createElement('span')
 	let userNameMenu = document.querySelector('.user-name-menu')
 	let spanText = document.createTextNode(l2StorageUser.name)
 	spanUserNameMenu.appendChild(spanText)
 	userNameMenu.appendChild(spanUserNameMenu)
+
+
+	//nome na pagina
+
+	let nomeNaPagina = document.querySelector('.nome-na-pagina');
+
+	nomeNaPagina.appendChild(spanText);
 
 	$(".loadings")
 		.css("display", "flex")
