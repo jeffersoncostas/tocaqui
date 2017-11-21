@@ -197,6 +197,11 @@ function alterarPaginaUserName() {
 
 	// habilidades da pessoa na pagina
 
+	let habilidadesUsuario = document.querySelector("#habilidades-meu-perfil");
+
+	habilidadesUsuario.value = l2StorageUser.habilidades;
+
+
 	$(".loadings")
 		.css("display", "flex")
 		.fadeOut();
