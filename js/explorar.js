@@ -266,19 +266,22 @@ function sairLogout() {
 //
 
 //  resgatar dados do localstorage
-
+//testar12()
 //let userDataExplorar = null;
 //
-let userDataExplorar = JSON.parse(localStorage.userData);
-//
-//testar12()
 
-let lStorageUser = localStorage.userData = JSON.stringify(userDataExplorar)
-
-
-let l2StorageUser = JSON.parse(lStorageUser)
 
 if (localStorage.userData != undefined) {
+
+
+	let userDataExplorar = JSON.parse(localStorage.userData);
+	//
+
+
+	let lStorageUser = localStorage.userData = JSON.stringify(userDataExplorar)
+
+
+	let l2StorageUser = JSON.parse(lStorageUser)
 
 	console.log('entrei')
 	console.log(lStorageUser)
