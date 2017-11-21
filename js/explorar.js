@@ -255,7 +255,7 @@ function sairLogout() {
 
 	}
 
-	//setTimeout(display, 700)
+	setTimeout(display, 700)
 
 }
 //
@@ -278,7 +278,7 @@ let lStorageUser = localStorage.userData = JSON.stringify(userDataExplorar)
 
 let l2StorageUser = JSON.parse(lStorageUser)
 
-if (localStorage.userData != null) {
+if (localStorage.userData != undefined) {
 
 	console.log('entrei')
 	console.log(lStorageUser)

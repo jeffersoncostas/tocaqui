@@ -35,14 +35,12 @@ if ('serviceWorker' in navigator) {
 
 // logar com localstorage
 
-if (localStorage.userData == null) {
+if (localStorage.userData == undefined) {
 
-	localStorage.userData
 	console.log("não ta logado")
 
 } else {
-	localStorage.userData
-	//window.location.replace("explorar.html")
+	window.location.replace("explorar.html")
 
 }
 
