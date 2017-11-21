@@ -200,7 +200,14 @@ function alterarPaginaUserName() {
 
 	let habilidadesUsuario = document.querySelector("#habilidades-meu-perfil");
 
-	habilidadesUsuario.value = l2StorageUser.habilidades;
+	if (habilidadesUsuario.value == null) {
+
+		habilidadesUsuario.value = " quais suas habilidades?"
+	} else {
+
+		habilidadesUsuario.value = l2StorageUser.habilidades;
+
+	}
 
 
 
@@ -208,7 +215,15 @@ function alterarPaginaUserName() {
 
 	let sobreoUsuario = document.querySelector("#sobre-o-usuario");
 
-	sobreoUsuario.value = l2StorageUser.sobre;
+
+	if (sobreoUsuario == null) {
+
+		sobreoUsuario.value = "conte um pouco sobre você..."
+	} else {
+		sobreoUsuario.value = l2StorageUser.sobre;
+
+
+	}
 
 	$(".loadings")
 		.css("display", "flex")
