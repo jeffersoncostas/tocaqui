@@ -140,16 +140,29 @@ projetos_que_to.addEventListener("click", function () {
 
 // RESGATAR DADOS LOCALSTORAGE
 
-let userDataExplorar = JSON.parse(localStorage.userData);
+//$(".loadings")
+//.css("display", "flex")
+//	.fadeIn();
+
+let userDataExplorar = null;
 //
-//testar12()
 
-let lStorageUser = localStorage.userData = JSON.stringify(userDataExplorar)
+let lStorageUser = null;
 
 
-let l2StorageUser = JSON.parse(lStorageUser)
+let l2StorageUser = null;
 
-if (localStorage.userData != null) {
+if (localStorage.userData != undefined) {
+
+
+	userDataExplorar = JSON.parse(localStorage.userData);
+	//
+
+
+	lStorageUser = localStorage.userData = JSON.stringify(userDataExplorar)
+
+
+	l2StorageUser = JSON.parse(lStorageUser)
 
 	console.log('entrei')
 	console.log(lStorageUser)
@@ -158,7 +171,7 @@ if (localStorage.userData != null) {
 
 } else {
 
-	window.location.replace("index.html")
+	//window.location.replace("index.html")
 
 
 }
@@ -171,5 +184,10 @@ function alterarPaginaUserName() {
 	let spanText = document.createTextNode(l2StorageUser.name)
 	spanUserNameMenu.appendChild(spanText)
 	userNameMenu.appendChild(spanUserNameMenu)
+
+	$(".loadings")
+		.css("display", "flex")
+		.fadeOut();
+
 
 }

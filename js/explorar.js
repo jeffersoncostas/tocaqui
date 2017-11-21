@@ -255,7 +255,7 @@ function sairLogout() {
 
 	}
 
-	setTimeout(display, 1500)
+	setTimeout(display, 157 00)
 
 }
 //

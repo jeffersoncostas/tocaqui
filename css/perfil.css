@@ -87,16 +87,23 @@
 }
 
 
-
-.sobre span {
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+textarea {
+	border: none;
+	box-sizing: border-box;
+	width: 100%;
+	z-index: 4;
+	font-size: 14px;
+	font-family: 'karla';
+	border-radius: 5px;
 	text-align: justify;
 	display: block;
 	color: #3F3F3F;
 	padding: 20px;
 	background-color: #D3D3D3;
+	resize: none;
 }
+
+.sobre span {}
 
 .conquistas_nome {
 	position: relative;
