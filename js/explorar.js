@@ -204,7 +204,7 @@ for (let i = 0; i < buttonsMeuPerfil.length; i++) {
 
 function abrirMeuPerfil() {
 
-	window.location.replace("postar-ideia.html");
+	window.location.assign("perfil.html");
 
 }
 //
