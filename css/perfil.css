@@ -32,30 +32,30 @@
 .foto_nome {
 	position: relative;
 
-
-	margin: auto;
 	background-color: #D3D3D3;
 
 }
 
 .foto {
+	padding: 10px;
+	margin-right: 20px;
 	display: inline-block;
 	height: 100%;
-	width: 35%;
+	width: 35%
 }
 
 .foto img {
-	padding: 14px;
-	padding-left: 20px;
-	width: 100px;
-	border-radius: 70px;
-	height: 100px;
+	box-sizing: border-box;
+
+	width: 80%;
+	border-radius: 50%;
+	height: 80%;
 }
 
 .nome_trabalho {
 	background-origin: border-box;
 	padding: 10px 5px;
-	padding-top: 35px;
+
 	position: absolute;
 	display: inline-block;
 	width: 63%;
