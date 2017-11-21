@@ -240,8 +240,9 @@ function sairLogout() {
 		.css("display", "flex")
 		.fadeIn();
 
-	localStorage.userData = null;
-	localStorage.saberLog = 1;
+	localStorage.removeItem('userData')
+
+	console.log(localStorage.userData)
 
 	function display() {
 
@@ -254,7 +255,7 @@ function sairLogout() {
 
 	}
 
-	setTimeout(display, 700)
+	//setTimeout(display, 700)
 
 }
 //
