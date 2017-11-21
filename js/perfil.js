@@ -291,7 +291,7 @@ function enviarHabilidadesServ(habi) {
 							'ideiasParticipo': data[i].ideiasParticipo
 						},
 						url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/' + id1,
-						success: enviarpLocalStorage(data[i]);
+						success: enviarpLocalStorage(data[i])
 
 
 					});
