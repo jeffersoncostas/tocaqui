@@ -219,7 +219,7 @@ buttonPostarNovaIdeia.addEventListener('click', abrirPostarNovaIdeia)
 
 function abrirPostarNovaIdeia() {
 
-	window.location.assign("perfil.html");
+	window.location.assign("postar-ideia.html");
 
 }
 
