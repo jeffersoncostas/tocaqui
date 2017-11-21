@@ -245,11 +245,11 @@ habilidadesUsuario.addEventListener('keydown', function (event) {
 })
 
 function enviarHabilidadesEnter(event) {
-	$(".loadings")
-		.css("display", "flex")
-		.fadeIn();
-	if (event.which == 13 || event.which == 10) {
 
+	if (event.which == 13 || event.which == 10) {
+		$(".loadings")
+			.css("display", "flex")
+			.fadeIn();
 		enviarHabilidadesServ(habilidadesUsuario.value)
 		event.stopImmediatePropagation();
 		event.preventDefault();
