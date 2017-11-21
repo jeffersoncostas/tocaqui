@@ -191,6 +191,25 @@ function abrirUlMinhasIdeias() {
 //
 
 
+// ABRIR MEU PERFIL
+
+
+let buttonsMeuPerfil = document.querySelectorAll('.meu-perfil');
+
+for (let i = 0; i < buttonsMeuPerfil.length; i++) {
+
+	buttonsMeuPerfil[i].addEventListener("click", abrirMeuPerfil)
+}
+
+
+function abrirMeuPerfil() {
+
+	window.location.replace("postar-ideia.html");
+
+}
+//
+
+
 
 //ABRIR POSTAR NOVA IDEIA 
 
@@ -200,7 +219,7 @@ buttonPostarNovaIdeia.addEventListener('click', abrirPostarNovaIdeia)
 
 function abrirPostarNovaIdeia() {
 
-	window.location.replace("postar-ideia.html");
+	window.location.assign("perfil.html");
 
 }
 
