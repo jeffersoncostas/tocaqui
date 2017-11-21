@@ -192,8 +192,9 @@ function alterarPaginaUserName() {
 	//nome na pagina
 
 	let nomeNaPagina = document.querySelector('.nome-na-pagina');
+	let spanTextNome = document.createTextNode(l2StorageUser.name)
 
-	nomeNaPagina.appendChild(spanText);
+	nomeNaPagina.appendChild(spanTextNome);
 
 	// habilidades da pessoa na pagina
 
