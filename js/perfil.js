@@ -217,7 +217,7 @@ function alterarPaginaUserName() {
 
 	console.log(sobreoUsuario.value);
 
-	if (sobreoUsuario.value == null) {
+	if (sobreoUsuario.value == "") {
 
 		sobreoUsuario.value = "conte um pouco sobre você..."
 	} else {
