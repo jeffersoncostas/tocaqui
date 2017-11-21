@@ -203,6 +203,13 @@ function alterarPaginaUserName() {
 	habilidadesUsuario.value = l2StorageUser.habilidades;
 
 
+
+	// descrição da pessoa
+
+	let sobreoUsuario = document.querySelector("#sobre-o-usuario");
+
+	sobreoUsuario.value = l2StorageUser.sobre;
+
 	$(".loadings")
 		.css("display", "flex")
 		.fadeOut();

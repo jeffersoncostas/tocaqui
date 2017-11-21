@@ -1,7 +1,7 @@
 .conteudo_all {
 	box-sizing: border-box;
 	width: 100%;
-	height: calc(100vh + 60px);
+	min-height: calc(100vh + 60px);
 	padding: 60px 20px 20px 20px;
 	background-color: #efefef;
 }
