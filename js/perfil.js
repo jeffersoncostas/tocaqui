@@ -245,9 +245,12 @@ habilidadesUsuario.addEventListener('keydown', function (event) {
 })
 
 function enviarHabilidadesEnter(event) {
+	$(".loadings")
+		.css("display", "flex")
+		.fadeIn();
 	if (event.which == 13 || event.which == 10) {
 
-		enviarHabilidadesServ()
+		enviarHabilidadesServ(habilidadesUsuario.value)
 		event.stopImmediatePropagation();
 		event.preventDefault();
 	}
@@ -272,9 +275,6 @@ function enviarHabilidadesServ(habi) {
 					let id1 = data[i].id;
 
 
-
-
-
 					$.ajax({
 						data: '{"some":"json"}',
 						dataType: 'json',
@@ -291,7 +291,9 @@ function enviarHabilidadesServ(habi) {
 							'ideiasParticipo': data[i].ideiasParticipo
 						},
 						url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/' + id1,
-						success: mudarDePagina()
+						success: enviarpLocalStorage(data[i]);
+
+
 					});
 
 
@@ -303,5 +305,15 @@ function enviarHabilidadesServ(habi) {
 		}
 	})
 
+	function enviarpLocalStorage(data) {
 
+		l2StorageUser = data
+
+
+		localStorage.userData = JSON.stringify(l2StorageUser);
+		$(".loadings")
+			.css("display", "flex")
+			.fadeOut();
+
+	}
 }
