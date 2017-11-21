@@ -217,7 +217,7 @@ function alterarPaginaUserName() {
 
 	console.log(sobreoUsuario.value);
 
-	if (sobreoUsuario.value == "") {
+	if (sobreoUsuario.value == "" || sobreoUsuario == null) {
 
 		sobreoUsuario.value = "conte um pouco sobre você..."
 	} else {
@@ -229,6 +229,79 @@ function alterarPaginaUserName() {
 	$(".loadings")
 		.css("display", "flex")
 		.fadeOut();
+
+
+}
+
+
+
+
+/// Alterar habilidades 
+
+let habilidadesUsuario = document.querySelector("#habilidades-meu-perfil");
+
+habilidadesUsuario.addEventListener('keydown', function (event) {
+	enviarHabilidadesEnter(event)
+})
+
+function enviarHabilidadesEnter(event) {
+	if (event.which == 13 || event.which == 10) {
+
+		enviarHabilidadesServ()
+		event.stopImmediatePropagation();
+		event.preventDefault();
+	}
+
+}
+
+
+function enviarHabilidadesServ(habi) {
+
+	$.ajax({
+		data: '{"some":"json"}',
+		dataType: 'json',
+		type: 'GET',
+		url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/',
+		success: function (data) {
+			for (let i = 0; i < data.length; i++) {
+
+
+				if (data[i].idUser == l2StorageUser.idUser) {
+
+					data[i].habilidades = habi;
+					let id1 = data[i].id;
+
+
+
+
+
+					$.ajax({
+						data: '{"some":"json"}',
+						dataType: 'json',
+						type: 'PUT',
+						data: {
+							'idUser': data[i].idUser,
+							'name': data[i].name,
+							'email': data[i].email,
+							'senha': data[i].senha,
+							'habilidades': data[i].habilidades,
+							'sobre': data[i].sobre,
+							'conquistas': data[i].conquistas,
+							'minhasIdeias': data[i].minhasIdeias,
+							'ideiasParticipo': data[i].ideiasParticipo
+						},
+						url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/' + id1,
+						success: mudarDePagina()
+					});
+
+
+
+
+
+				}
+			}
+		}
+	})
 
 
 }
