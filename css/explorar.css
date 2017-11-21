@@ -510,9 +510,9 @@ input[type="checkbox"]:checked + label:before {
 	transition: all 0.7s;
 }
 
-.ideia-my{
-	
-		border-bottom: 2px solid rgba(255, 40, 109, 0.3);
+.ideia-my {
+
+	border-bottom: 2px solid rgba(255, 40, 109, 0.3);
 
 }
 
@@ -539,8 +539,7 @@ input[type="checkbox"]:checked + label:before {
 	position: relative;
 	user-select: none;
 	cursor: pointer;
-	font-size: 20px;
-	font-weight: 600;
+	font-size: 17px;
 	margin-bottom: 15px;
 }
 
