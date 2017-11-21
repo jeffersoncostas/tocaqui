@@ -195,6 +195,8 @@ function alterarPaginaUserName() {
 
 	nomeNaPagina.appendChild(spanText);
 
+	// habilidades da pessoa na pagina
+
 	$(".loadings")
 		.css("display", "flex")
 		.fadeOut();
