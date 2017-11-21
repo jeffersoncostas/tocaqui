@@ -1,6 +1,7 @@
 .conteudo_all {
 	box-sizing: border-box;
-	width: 100%;
+	width: 100vw;
+	height: 100vh;
 	min-height: calc(100vh + 60px);
 	padding: 60px 20px 20px 20px;
 	background-color: #efefef;
@@ -31,43 +32,46 @@
 
 .foto_nome {
 	position: relative;
-
+	width: 100%;
 	background-color: #D3D3D3;
 
 }
 
 .foto {
 	padding: 10px;
-	margin-right: 20px;
-	display: inline-block;
-	height: 100%;
-	width: 35%
+	display: inline-flex;
+	width: 90px;
 }
 
 .foto img {
 	box-sizing: border-box;
 
-	width: 80%;
+	width: 90px;
 	border-radius: 50%;
-	height: 80%;
+	height: 90px;
 }
 
 .nome_trabalho {
 	background-origin: border-box;
-	padding: 10px 5px;
-
-	position: absolute;
-	display: inline-block;
-	width: 63%;
+	display: inline-flex;
+	width: 65%;
 }
 
 .nome-na-pagina {
-	display: block;
+	top: 10px;
+	right: 0px;
+	position: absolute;
 	font-size: 20px;
 	color: #4f4544;
+	width: calc(100% - 100px);
+	height: 50px;
 }
 
 .trabalho {
+	width: calc(100% - 90px);
+	position: absolute;
+	bottom: 20px;
+	right: 0;
 	font-size: 18px;
 	color: #ff276c;
 }
