@@ -210,6 +210,20 @@ function abrirPostarNovaIdeia() {
 }
 
 
+// ABRIR EXPLORAR 
+
+let buttonExplorarIdeias = document.querySelector("#explorar-ideias");
+
+
+buttonExplorarIdeias.addEventListener('click', abrirExplorar)
+
+function abrirExplorar() {
+
+	window.location.replace("explorar.html")
+
+
+}
+
 
 
 // RESGATAR DADOS LOCALSTORAGE
