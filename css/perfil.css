@@ -1,3 +1,10 @@
+#explorar-ideias {
+	background-color: rgba(255, 40, 109, 0);
+
+}
+
+
+
 .conteudo_all {
 	box-sizing: border-box;
 	width: 100vw;
@@ -63,14 +70,14 @@
 	position: absolute;
 	font-size: 20px;
 	color: #4f4544;
-	width: calc(100% - 100px);
-	height: 50px;
+	width: calc(100% - 110px);
+
 }
 
 .trabalho {
-	width: calc(100% - 90px);
+	width: calc(100% - 110px);
 	position: absolute;
-	bottom: 15px;
+	bottom: 30px;
 	right: 0px;
 	font-size: 18px;
 	color: #ff276c;
@@ -78,7 +85,7 @@
 
 
 #habilidades-meu-perfil {
-	padding: 0px 20px;
+	padding: 0px 20px 0px 0px;
 	font-size: 18px;
 	color: #ff276c;
 	background: none;

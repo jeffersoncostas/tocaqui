@@ -138,6 +138,80 @@ projetos_que_to.addEventListener("click", function () {
 
 });
 
+
+
+// SAIR 
+
+let buttonSair = document.querySelector("#button-sair");
+
+buttonSair.addEventListener("click", sairLogout)
+
+
+function sairLogout() {
+
+	fecharMenuModal()
+
+	$(".loadings")
+		.css("display", "flex")
+		.fadeIn();
+
+	localStorage.removeItem('userData')
+
+	console.log(localStorage.userData)
+
+	function display() {
+
+		$(".loadings")
+			.css("display", "flex")
+			.fadeOut();
+
+		window.location.replace("index.html")
+
+
+	}
+
+	setTimeout(display, 1500)
+
+}
+//
+
+
+
+// abrir submenu
+let buttonMinhasIdeias = document.querySelector("#button-minhas-ideias")
+
+buttonMinhasIdeias.addEventListener('click', abrirUlMinhasIdeias)
+
+function abrirUlMinhasIdeias() {
+	let ulMinhasIdeias = document.querySelector('#ul-minhas-ideias')
+	if (ulMinhasIdeias.style.display == 'block') {
+		$("#ul-minhas-ideias").slideUp('slow');
+
+
+	} else {
+		$("#ul-minhas-ideias").slideDown('slow');
+
+	}
+
+}
+
+//
+
+//ABRIR POSTAR NOVA IDEIA 
+
+let buttonPostarNovaIdeia = document.querySelector('#button-li-postar-nova-ideia');
+
+buttonPostarNovaIdeia.addEventListener('click', abrirPostarNovaIdeia)
+
+function abrirPostarNovaIdeia() {
+
+	window.location.assign("postar-ideia.html");
+
+}
+
+
+
+
 // RESGATAR DADOS LOCALSTORAGE
 
 //$(".loadings")
@@ -202,7 +276,7 @@ function alterarPaginaUserName() {
 
 	if (habilidadesUsuario.value == null || habilidadesUsuario.value == "") {
 
-		habilidadesUsuario.value = " quais suas habilidades?";
+		habilidadesUsuario.placeholder = " quais suas habilidades?";
 	} else {
 
 		habilidadesUsuario.value = l2StorageUser.habilidades;
@@ -219,7 +293,7 @@ function alterarPaginaUserName() {
 
 	if (sobreoUsuario.value == "" || sobreoUsuario == null) {
 
-		sobreoUsuario.value = "conte um pouco sobre você..."
+		sobreoUsuario.placeholder = "conte um pouco sobre você..."
 	} else {
 		sobreoUsuario.value = l2StorageUser.sobre;
 

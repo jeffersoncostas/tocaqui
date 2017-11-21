@@ -235,7 +235,7 @@ body {
 	color: white;
 }
 
-.menu-modal #ul-menu #explorar-ideias {
+#explorar-ideias {
 	background-color: #FF286D;
 	background-image: url('../vectors/explorar-icon-white.svg');
 	background-repeat: no-repeat;
