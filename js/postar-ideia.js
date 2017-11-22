@@ -284,13 +284,21 @@ function postarIdeia() {
 			data: '{"some":"json"}',
 			dataType: 'json',
 			type: 'GET',
-			url: 'http://rest.learncode.academy/api/tocaqui/teste-ideias6/',
+			url: 'http://rest.learncode.academy/api/tocaqui/teste-ideias7/',
 			success: function (data) {
-				let ideiaId = parseInt(data[data.length - 1].idIdeia);
+				if (data.length <= 0) {
 
-				let id12 = ideiaId + 1;
-				console.log(id12)
-				enviarAoserv(id12);
+					enviarAoserv(0);
+
+				} else {
+					let ideiaId = parseInt(data[data.length - 1].idIdeia);
+
+					let id12 = ideiaId + 1;
+					console.log(id12)
+					enviarAoserv(id12);
+
+				}
+
 
 			}
 		});
@@ -303,7 +311,7 @@ function postarIdeia() {
 			data: '{"some":"json"}',
 			dataType: 'json',
 			type: 'POST',
-			url: 'http://rest.learncode.academy/api/tocaqui/teste-ideias6/',
+			url: 'http://rest.learncode.academy/api/tocaqui/teste-ideias7/',
 			data: {
 				'idIdeia': idIdeia,
 				'categoriaIdeia': categoriaEscolhida,
@@ -349,7 +357,7 @@ function postarIdeia() {
 			data: '{"some":"json"}',
 			dataType: 'json',
 			type: 'GET',
-			url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/',
+			url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/',
 			success: function (data) {
 				for (let i = 0; i < data.length; i++) {
 
@@ -360,6 +368,7 @@ function postarIdeia() {
 
 						let id2 = data[i].id
 						let data2 = data[i].minhasIdeias
+
 						console.log(data2)
 
 						$.ajax({
@@ -377,14 +386,13 @@ function postarIdeia() {
 								'minhasIdeias': data2,
 								'ideiasParticipo': data[i].ideiasParticipo
 							},
-							url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/' + id2,
+							url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/' + id2,
 							success: mudarDePagina()
 						});
 
-
-
-
 						break
+
+
 
 					}
 
@@ -399,11 +407,17 @@ function postarIdeia() {
 
 
 
-			$(".loadings")
-				.css("display", "flex")
-				.fadeOut();
 
-			window.location.replace("explorar.html");
+			function mudaraPagina() {
+				$(".loadings")
+					.css("display", "flex")
+					.fadeOut();
+				window.location.replace("explorar.html");
+
+
+			}
+
+			setTimeout(mudaraPagina, 800)
 
 		}
 

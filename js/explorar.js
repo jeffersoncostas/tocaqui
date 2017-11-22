@@ -291,7 +291,7 @@ if (localStorage.userData != undefined) {
 	l2StorageUser = JSON.parse(lStorageUser)
 
 	console.log('entrei')
-	console.log(lStorageUser)
+	console.log(l2StorageUser)
 
 	alterarPaginaUserName()
 	aparecer1()
@@ -349,13 +349,14 @@ function aparecer1() {
 		data: '{"some":"json"}',
 		dataType: 'json',
 		type: 'GET',
-		url: 'http://rest.learncode.academy/api/tocaqui/teste-ideias6/',
+		url: 'http://rest.learncode.academy/api/tocaqui/teste-ideias7/',
 		success: function (data) {
 
 
 			for (let i = 0; i < data.length; i++) {
 
 				let participantesContar = null;
+				let ContemNasIdeias = null;
 				for (let x = 0; x < data[i].participantes.length; x++) {
 
 					participantesContar++
@@ -365,15 +366,30 @@ function aparecer1() {
 
 				}
 
-				if (l2StorageUser.minhasIdeias.includes(data[i].idIdeia)) {
-					console.log('contem minha ideia no exlorar')
+				for (let x = 0; x < l2StorageUser.minhasIdeias.length; x++) {
+
+					if (l2StorageUser.minhasIdeias[x] == data[i].idIdeia) {
+						ContemNasIdeias = 1
+
+					} else {
+
+
+					}
+
+				}
+
+
+
+				if (ContemNasIdeias == 1) {
+					console.log('contem minha ideia no explorar')
 
 					aparecerIdeiaQueEminha(data[i].nomeIdeia, data[i].nomeCriador, data[i].habilidadesCriador, data[i].descricaoDaIdeia, data[i].oqPrecisa, participantesContar, data[i].termometro)
 
 				} else {
-					aparecerIdeiasPagina(data[i].nomeIdeia, data[i].nomeCriador, data[i].habilidadesCriador, data[i].descricaoDaIdeia, data[i].oqPrecisa, participantesContar, data[i].termometro)
+					aparecerIdeiasPagina(data[i].nomeIdeia, data[i].nomeCriador, data[i].habilidadesCriador, data[i].descricaoDaIdeia, data[i].oqPrecisa, participantesContar, data[i].termometro, data[i].idIdeia)
 
 				}
+
 
 
 
@@ -390,7 +406,7 @@ function aparecer1() {
 	});
 }
 
-function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe, pessoasPart, termometro) {
+function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe, pessoasPart, termometro, idIdeia) {
 
 	let ListaIdeias =
 		document.querySelector('.lista-ideias');
@@ -520,6 +536,125 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 	buttonEntrarIdeia.classList.add('button-entrar-ideia-content')
 
 	ideiaContent.appendChild(buttonEntrarIdeia);
+
+	// click para entrar na ideia 
+
+	buttonEntrarIdeia.addEventListener("click", participarDeIdeia)
+
+	function participarDeIdeia() {
+		let closeModalParticipar = document.querySelector(".close-modal-participar");
+
+		$(".modal-participar-ideia")
+			.css("display", "flex")
+			.fadeIn();
+
+
+		closeModalParticipar.addEventListener("click", fecharmodalParticipar)
+
+
+		function fecharmodalParticipar() {
+
+			$(".modal-participar-ideia")
+				.css("display", "flex")
+				.fadeOut();
+
+
+
+
+		}
+
+
+
+
+	}
+
+
+	let buttonConfirmarParticipacao = document.querySelector("#button-confirmar-participacao")
+
+	buttonConfirmarParticipacao.addEventListener('click', abrirPagMensagens)
+
+	function abrirPagMensagens() {
+		$(".loadings")
+			.css("display", "flex")
+			.fadeIn();
+
+
+
+		$.ajax({
+			data: '{"some":"json"}',
+			dataType: 'json',
+			type: 'GET',
+			url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/',
+			success: function (data) {
+				for (let i = 0; i < data.length; i++) {
+
+
+					if (data[i].idUser == l2StorageUser.idUser) {
+
+						data[i].ideiasParticipo.push(idIdeia);
+						let id1 = data[i].id;
+
+
+						$.ajax({
+							data: '{"some":"json"}',
+							dataType: 'json',
+							type: 'PUT',
+							data: {
+								'idUser': data[i].idUser,
+								'name': data[i].name,
+								'email': data[i].email,
+								'senha': data[i].senha,
+								'habilidades': data[i].habilidades,
+								'sobre': data[i].sobre,
+								'conquistas': data[i].conquistas,
+								'minhasIdeias': data[i].minhasIdeias,
+								'ideiasParticipo': data[i].ideiasParticipo
+							},
+							url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/' + id1,
+							success: enviarpLocalStorage(data[i])
+
+
+						});
+
+
+
+
+
+					}
+				}
+			}
+		})
+
+		function enviarpLocalStorage(data) {
+
+			l2StorageUser = data
+
+
+			localStorage.userData = JSON.stringify(l2StorageUser);
+
+			console.log(l2StorageUser)
+			$(".loadings")
+				.css("display", "flex")
+				.fadeOut();
+
+			//window.location.assign("mensagens.html")
+
+		}
+
+
+
+
+
+
+
+
+
+	}
+
+
+
+
+
 
 }
 
@@ -655,5 +790,8 @@ function aparecerIdeiaQueEminha(titulo, criador, habilidades, descricao, precisa
 	buttonEntrarIdeia.classList.add('button-entrar-ideia-content', 'bttn-my')
 
 	ideiaContent.appendChild(buttonEntrarIdeia);
+
+
+	/// click entrar na pagina
 
 }

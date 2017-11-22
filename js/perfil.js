@@ -358,7 +358,7 @@ function enviarHabilidadesServ(habi) {
 		data: '{"some":"json"}',
 		dataType: 'json',
 		type: 'GET',
-		url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/',
+		url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/',
 		success: function (data) {
 			for (let i = 0; i < data.length; i++) {
 
@@ -384,7 +384,7 @@ function enviarHabilidadesServ(habi) {
 							'minhasIdeias': data[i].minhasIdeias,
 							'ideiasParticipo': data[i].ideiasParticipo
 						},
-						url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/' + id1,
+						url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/' + id1,
 						success: enviarpLocalStorage(data[i])
 
 

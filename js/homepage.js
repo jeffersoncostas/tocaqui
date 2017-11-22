@@ -287,7 +287,7 @@ function logarModalLogin() {
 		data: '{"some":"json"}',
 		dataType: 'json',
 		type: 'GET',
-		url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/',
+		url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/',
 		success: function (data) {
 
 			for (let i = 0; i < data.length; i++) {
@@ -486,7 +486,7 @@ function enviarNomeEmail() {
 			data: '{"some":"json"}',
 			dataType: 'json',
 			type: 'GET',
-			url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/',
+			url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/',
 			success: function (data) {
 				for (let i = 0; i < data.length; i++) {
 
@@ -644,7 +644,7 @@ function requisicaoCadastrar(fullName, email, password) {
 		data: '{"some":"json"}',
 		dataType: 'json',
 		type: 'GET',
-		url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/',
+		url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/',
 		success: function (data) {
 			let userId = parseInt(data[data.length - 1].idUser);
 
@@ -661,7 +661,7 @@ function requisicaoCadastrar(fullName, email, password) {
 			data: '{"some":"json"}',
 			dataType: 'json',
 			type: 'POST',
-			url: 'http://rest.learncode.academy/api/tocaqui/usuarios4/',
+			url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/',
 			data: {
 				'idUser': iduser,
 				'name': fullName,
