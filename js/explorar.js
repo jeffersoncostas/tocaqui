@@ -355,6 +355,7 @@ function aparecer1() {
 
 				let participantesContar = null;
 				let ContemNasIdeias = null;
+				let IdeiasParticip = null;
 				for (let x = 0; x < data[i].participantes.length; x++) {
 
 					participantesContar++
@@ -376,12 +377,27 @@ function aparecer1() {
 
 				}
 
+				if (l2StorageUser.ideiasParticipo != undefined) {
+
+					for (let y = 0; y < l2StorageUser.ideiasParticipo.length; y++) {
+
+						if (l2StorageUser.ideiasParticipo[y] == data[i].idIdeia) {
+							IdeiasParticip = 1
 
 
-				if (ContemNasIdeias == 1) {
-					console.log('contem minha ideia no explorar')
+						} else {
 
-					aparecerIdeiaQueEminha(data[i].nomeIdeia, data[i].nomeCriador, data[i].habilidadesCriador, data[i].descricaoDaIdeia, data[i].oqPrecisa, participantesContar, data[i].termometro)
+						}
+
+					}
+
+				} else {}
+
+
+				if (ContemNasIdeias == 1 || IdeiasParticip == 1) {
+					console.log('contem ideia que participo no explorar')
+
+					aparecerIdeiaQueEminha(data[i].nomeIdeia, data[i].nomeCriador, data[i].habilidadesCriador, data[i].descricaoDaIdeia, data[i].oqPrecisa, participantesContar, data[i].termometro, data[i].idIdeia)
 
 				} else {
 					aparecerIdeiasPagina(data[i].nomeIdeia, data[i].nomeCriador, data[i].habilidadesCriador, data[i].descricaoDaIdeia, data[i].oqPrecisa, participantesContar, data[i].termometro, data[i].idIdeia)
@@ -546,6 +562,9 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 			.css("display", "flex")
 			.fadeIn();
 
+		let titulo2IdeiaPopup = document.querySelector("#titulo2-ideia-popup")
+		let TexTitulo2 = document.createTextNode(titulo);
+		titulo2IdeiaPopup.appendChild(TexTitulo2)
 
 		closeModalParticipar.addEventListener("click", fecharmodalParticipar)
 
@@ -556,8 +575,7 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 				.css("display", "flex")
 				.fadeOut();
 
-
-
+			titulo2IdeiaPopup.innerHTML = '';
 
 		}
 
@@ -572,6 +590,7 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 	buttonConfirmarParticipacao.addEventListener('click', abrirPagMensagens)
 
 	function abrirPagMensagens() {
+
 		$(".loadings")
 			.css("display", "flex")
 			.fadeIn();
@@ -588,34 +607,48 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 
 
 					if (data[i].idUser == l2StorageUser.idUser) {
-
-						data[i].ideiasParticipo.push(idIdeia);
 						let id1 = data[i].id;
 
+						if (data[i].ideiasParticipo == undefined) {
+							let arrayIdeiasParticipo = []
+							arrayIdeiasParticipo.push(idIdeia)
 
-						$.ajax({
-							data: '{"some":"json"}',
-							dataType: 'json',
-							type: 'PUT',
-							data: {
-								'idUser': data[i].idUser,
-								'name': data[i].name,
-								'email': data[i].email,
-								'senha': data[i].senha,
-								'habilidades': data[i].habilidades,
-								'sobre': data[i].sobre,
-								'conquistas': data[i].conquistas,
-								'minhasIdeias': data[i].minhasIdeias,
-								'ideiasParticipo': data[i].ideiasParticipo
-							},
-							url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/' + id1,
-							success: enviarpLocalStorage(data[i])
+							requisPut(arrayIdeiasParticipo)
+						} else {
+							let id23 = data[i].ideiasParticipo.push(idIdeia);
+							requisPut(id23)
+						}
+
+						function requisPut(arrayIdeiasPart) {
 
 
-						});
+							$.ajax({
+								data: '{"some":"json"}',
+								dataType: 'json',
+								type: 'PUT',
+								data: {
+									'idUser': data[i].idUser,
+									'name': data[i].name,
+									'email': data[i].email,
+									'senha': data[i].senha,
+									'habilidades': data[i].habilidades,
+									'sobre': data[i].sobre,
+									'conquistas': data[i].conquistas,
+									'minhasIdeias': data[i].minhasIdeias,
+									'ideiasParticipo': arrayIdeiasPart
+								},
+								url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/' + id1,
+								success: enviarpLocalStorage(data[i])
+
+
+							});
+
+
+						}
 
 
 
+						break
 
 
 					}
@@ -627,15 +660,21 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 
 			l2StorageUser = data
 
-
 			localStorage.userData = JSON.stringify(l2StorageUser);
-
+			localStorage.ideiaRecemParticipada = idIdeia;
 			console.log(l2StorageUser)
-			$(".loadings")
-				.css("display", "flex")
-				.fadeOut();
 
-			//window.location.assign("mensagens.html")
+
+			function mensagem() {
+				$(".loadings")
+					.css("display", "flex")
+					.fadeOut();
+
+				window.location.assign("mensagens.html")
+
+			}
+			setTimeout(mensagem, 700)
+
 
 		}
 
@@ -652,13 +691,11 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 
 
 
-
-
 }
 
 
 
-function aparecerIdeiaQueEminha(titulo, criador, habilidades, descricao, precisaDe, pessoasPart, termometro) {
+function aparecerIdeiaQueEminha(titulo, criador, habilidades, descricao, precisaDe, pessoasPart, termometro, idIdeia) {
 
 	let ListaIdeias =
 		document.querySelector('.lista-ideias');
@@ -779,7 +816,7 @@ function aparecerIdeiaQueEminha(titulo, criador, habilidades, descricao, precisa
 
 	let buttonEntrarIdeia = document.createElement('div');
 	let buttonEntrarIdeiaSpan = document.createElement('span');
-	let SpanButtonEntrarText = document.createTextNode('ver minha ideia');
+	let SpanButtonEntrarText = document.createTextNode('abrir bate papo da ideia');
 
 
 
@@ -791,5 +828,32 @@ function aparecerIdeiaQueEminha(titulo, criador, habilidades, descricao, precisa
 
 
 	/// click entrar na pagina
+
+
+	buttonEntrarIdeia.addEventListener("click", abrirPaginaMensagem)
+
+
+
+	function abrirPaginaMensagem() {
+		$(".loadings")
+			.css("display", "flex")
+			.fadeIn();
+
+		localStorage.ideiaRecemParticipada = idIdeia;
+
+
+		function mensagem() {
+			$(".loadings")
+				.css("display", "flex")
+				.fadeOut();
+
+			window.location.assign("mensagens.html")
+
+		}
+		setTimeout(mensagem, 700)
+
+
+
+	}
 
 }

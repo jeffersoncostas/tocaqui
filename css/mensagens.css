@@ -1,0 +1,76 @@
+.container-pagina {
+	padding: 80px 20px 20px;
+	box-sizing: border-box;
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+
+}
+
+
+.batepapo-ideia {
+	box-sizing: border-box;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	left: 0;
+	width: 100%;
+	height: 70vh;
+	background-color: #e2e2e2;
+	padding: 0px 20px;
+}
+
+.batepapo-ideia span {
+	box-sizing: border-box;
+	color: rgba(82, 82, 82, 0.5);
+	font-size: 18px;
+	font-variant-caps: all-small-caps;
+	align-self: center;
+}
+
+.input-texto-batepapo-ideia {
+	box-sizing: border-box;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 5;
+	width: 100%;
+	height: 60px;
+}
+
+.input-texto-batepapo-ideia input {
+	background-color: #ffffff;
+	box-sizing: border-box;
+	padding: 0px 70px 0px 80px;
+	width: 100%;
+	height: 100%;
+
+
+}
+
+
+.button-contatos {
+
+	position: absolute;
+	font-size: 70px;
+	height: 100%;
+	color: #b4b4b4;
+	left: 20px;
+}
+
+#enviar-conversa-bp-ideia {
+	display: block;
+	top: 0%;
+	height: 100%;
+	color: black;
+	position: absolute;
+	right: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+#enviar-conversa-bp-ideia span {
+
+	align-self: center;
+}

@@ -130,6 +130,7 @@ for (let i = 0; i < buttonsMeuPerfil.length; i++) {
 
 
 function abrirMeuPerfil() {
+	localStorage.removeItem('ideiaRecemParticipada')
 
 	window.location.assign("perfil.html");
 
@@ -145,6 +146,7 @@ let buttonPostarNovaIdeia = document.querySelector('#button-li-postar-nova-ideia
 buttonPostarNovaIdeia.addEventListener('click', abrirPostarNovaIdeia)
 
 function abrirPostarNovaIdeia() {
+	localStorage.removeItem('ideiaRecemParticipada')
 
 	window.location.assign("postar-ideia.html");
 
@@ -168,6 +170,7 @@ function sairLogout() {
 		.fadeIn();
 
 	localStorage.removeItem('userData')
+	localStorage.removeItem('ideiaRecemParticipada')
 
 	console.log(localStorage.userData)
 
@@ -186,3 +189,104 @@ function sairLogout() {
 
 }
 //
+
+
+
+// ABRIR EXPLORAR 
+
+let buttonExplorarIdeias = document.querySelector("#explorar-ideias");
+
+
+buttonExplorarIdeias.addEventListener('click', abrirExplorar)
+
+function abrirExplorar() {
+	localStorage.removeItem('ideiaRecemParticipada')
+
+	window.location.replace("explorar.html")
+
+
+}
+
+
+
+/////// RESGATAR DADOS LOCALSTORAGE
+
+let userDataExplorar = null;
+//
+
+
+let lStorageUser = null;
+
+
+let l2StorageUser = null;
+
+console.log(localStorage.userData)
+
+if (localStorage.userData != undefined) {
+
+
+	userDataExplorar = JSON.parse(localStorage.userData);
+	//
+
+
+	lStorageUser = localStorage.userData = JSON.stringify(userDataExplorar)
+
+
+	l2StorageUser = JSON.parse(lStorageUser)
+
+	console.log('entrei')
+	console.log(l2StorageUser)
+
+	alterarPaginaUserName()
+
+} else {
+
+	window.location.replace("index.html")
+
+
+}
+
+
+
+function alterarPaginaUserName() {
+
+	let spanUserNameMenu = document.createElement('span')
+	let userNameMenu = document.querySelector('.user-name-menu')
+	let spanText = document.createTextNode(l2StorageUser.name)
+	spanUserNameMenu.appendChild(spanText)
+	userNameMenu.appendChild(spanUserNameMenu)
+
+}
+
+
+
+
+
+
+
+//MOSTRAR TITULO DA IDEIA
+
+$.ajax({
+	data: '{"some":"json"}',
+	dataType: 'json',
+	type: 'GET',
+	url: 'http://rest.learncode.academy/api/tocaqui/teste-ideias7/',
+	success: function (data) {
+		for (let i = 0; i < data.length; i++) {
+
+			if (data[i].idIdeia == localStorage.ideiaRecemParticipada) {
+
+				let tituloBpMensagem = document.querySelector("#titulo-bp-mensagem");
+				let textTitulo = document.createTextNode(data[i].nomeIdeia)
+
+				tituloBpMensagem.appendChild(textTitulo);
+
+
+
+
+			}
+
+		}
+
+	}
+})
