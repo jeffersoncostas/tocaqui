@@ -351,8 +351,17 @@ function aparecer1() {
 		success: function (data) {
 
 
-			for (let i = 0; i < data.length; i++) {
+			for (let i = data.length - 1; i < data.length; i--) {
+				console.log(data[i])
 
+
+				if (data[i] == undefined) {
+
+					break
+
+				} else {
+					console.log('n é undefined ainda')
+				}
 				let participantesContar = null;
 				let ContemNasIdeias = null;
 				let IdeiasParticip = null;
@@ -604,7 +613,6 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 			url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/',
 			success: function (data) {
 				for (let i = 0; i < data.length; i++) {
-
 
 					if (data[i].idUser == l2StorageUser.idUser) {
 						let id1 = data[i].id;
