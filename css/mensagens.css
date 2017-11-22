@@ -53,10 +53,11 @@
 .button-contatos {
 
 	position: absolute;
-	font-size: 70px;
+	font-size: 40px;
 	height: 100%;
 	color: #b4b4b4;
 	left: 20px;
+	top: 20px;
 }
 
 #enviar-conversa-bp-ideia {
