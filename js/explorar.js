@@ -278,6 +278,8 @@ let lStorageUser = null;
 
 let l2StorageUser = null;
 
+console.log(localStorage.userData)
+
 if (localStorage.userData != undefined) {
 
 
@@ -330,10 +332,6 @@ function alterarPaginaUserName() {
 }
 // APARECER IDEIAS
 function aparecer1() {
-
-
-
-
 
 
 

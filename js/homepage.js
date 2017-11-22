@@ -22,13 +22,12 @@
 
 // service worker pwa
 
-if ('serviceWorker' in navigator) {
-
-	navigator.serviceWorker.register('sw.js')
-
-
-}
-
+//if ('serviceWorker' in navigator) {
+//
+//	navigator.serviceWorker.register('sw.js')
+//
+//
+//}
 
 // logar com localstorage
 
