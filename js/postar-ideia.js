@@ -233,6 +233,40 @@ buttonPostarIdeiaContent.addEventListener('click', postarIdeia)
 
 function postarIdeia() {
 
+	function erroAnimMsg(msgErro) {
+
+		$(".loadings")
+			.css("display", "flex")
+			.fadeOut();
+
+
+		$('#span-erro-postar-ideia').empty()
+
+
+
+		$('#span-erro-postar-ideia').append(document.createTextNode(msgErro));
+
+
+
+
+		$(".erros-modal-login").slideDown("slow");
+
+
+		function desaparecer() {
+			$(".erros-modal-login").slideUp("slow");
+
+
+		}
+
+		setTimeout(desaparecer, 2500)
+
+
+	}
+
+
+
+
+
 	$(".loadings")
 		.css("display", "flex")
 		.fadeIn();
@@ -260,23 +294,8 @@ function postarIdeia() {
 
 
 	} else {
-
-		$(".loadings")
-			.css("display", "flex")
-			.fadeOut();
-
-		$(".erros-modal-login").slideDown("slow");
-
-
-		function desaparecer() {
-			$(".erros-modal-login").slideUp("slow");
-
-
-		}
-
-		setTimeout(desaparecer, 2000)
-
-		console.log('erro postar ideia')
+		let erroMensagem = 'psiu... faltam informações em algum(ns) campo(s)'
+		erroAnimMsg(erroMensagem)
 	}
 
 	function requiEnviarIdeia() {
@@ -298,6 +317,16 @@ function postarIdeia() {
 					enviarAoserv(id12);
 
 				}
+
+
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+
+
+				let erroMensagem = 'iih, está sem conexão com a internet :( '
+				erroAnimMsg(erroMensagem)
+
 
 
 			}
@@ -333,10 +362,6 @@ function postarIdeia() {
 				console.log(localStorage.userData)
 
 
-
-
-
-
 				//window.location.replace("explorar.html")
 
 
@@ -344,7 +369,16 @@ function postarIdeia() {
 
 
 
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+				let erroMensagem = 'iih, está sem conexão com a internet :( '
+				erroAnimMsg(erroMensagem)
+
+
+
 			}
+
 		});
 	}
 
@@ -387,7 +421,16 @@ function postarIdeia() {
 								'ideiasParticipo': data[i].ideiasParticipo
 							},
 							url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/' + id2,
-							success: mudarDePagina()
+							success: mudarDePagina(),
+							error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+								let erroMensagem = 'iih, está sem conexão com a internet :( '
+								erroAnimMsg(erroMensagem)
+
+
+
+							}
+
 						});
 
 						break
@@ -399,6 +442,7 @@ function postarIdeia() {
 				}
 
 			}
+
 		});
 
 

@@ -52,6 +52,13 @@ let menuModal = document.querySelector('.menu-modal');
 let menuModalBg = document.querySelector('.menu-modal-bg');
 
 
+let hammertime = Hammer(menuModal).on("swipeleft", function (event) {
+
+	fecharMenuModal()
+
+});
+
+
 botaoMenuModal.addEventListener('click', abrirMenuModal)
 
 menuModalBg.addEventListener('click', fecharMenuModal)
@@ -148,13 +155,32 @@ buttonExplorarIdeiaHome.addEventListener('click', abrirModalCadastrar)
 buttonCloseModalCadastrar.addEventListener('click', fecharModalCadastrar)
 
 function abrirModalLoginDireto() {
+
 	abrirModalCadastrar()
 	abrirModalLogina()
 
 }
 
+function fecharContentModalLogin() {
+	let contentModalLogin = document.querySelector(".content-modal-login");
+
+	contentModalLogin.style.display = 'none';
+	contentModalLogin.style.display = ''
+	modalContentLogin.style.display = 'none';
+	modalContentLogin.style.display = '';
+
+
+
+
+
+}
+
+
+
+
 function abrirModalCadastrarDireto() {
 
+	fecharContentModalLogin()
 	abrirModalCadastrar()
 	abrirModalCadastrar2()
 }
@@ -206,6 +232,7 @@ function fecharModalCadastrar() {
 	console.log('entrei')
 
 	function display() {
+
 		modalCadastrar.style.display = 'none';
 		modalCadastrar.style.animationName = '';
 		modalContentLogin.style.display = '';
@@ -226,6 +253,8 @@ let buttonJaPossuiConta = document.querySelector('.button-ja-possui-conta');
 let buttonNaoPossuiConta = document.querySelector('.button-nao-possui-conta');
 
 buttonNaoPossuiConta.addEventListener('click', abrirModalCadastrar2)
+
+
 buttonJaPossuiConta.addEventListener('click', abrirModalLogina)
 
 function abrirModalCadastrar2() {
