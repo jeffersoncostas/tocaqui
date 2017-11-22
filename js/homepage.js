@@ -135,7 +135,7 @@ let buttonExplorarIdeiaHome = document.querySelector('#button-explorar-home')
 
 
 
-buttonCadastrar.addEventListener('click', abrirModalCadastrar);
+buttonCadastrar.addEventListener('click', abrirModalCadastrarDireto);
 
 buttonLogarHome.addEventListener("click", abrirModalLoginDireto)
 
@@ -151,6 +151,12 @@ function abrirModalLoginDireto() {
 	abrirModalCadastrar()
 	abrirModalLogina()
 
+}
+
+function abrirModalCadastrarDireto() {
+
+	abrirModalCadastrar()
+	abrirModalCadastrar2()
 }
 
 function abrirModalCadastrar() {
