@@ -280,30 +280,65 @@ let l2StorageUser = null;
 
 console.log(localStorage.userData)
 
-if (localStorage.userData != undefined || localStorage.userData != null) {
 
 
-	userDataExplorar = JSON.parse(localStorage.userData);
-	//
 
 
-	lStorageUser = localStorage.userData = JSON.stringify(userDataExplorar)
+
+$.ajax({
+	data: '{"some":"json"}',
+	dataType: 'json',
+	type: 'GET',
+	url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/',
+	success: function (data) {
+		let saberSeDeu = null;
+
+		for (let i = 0; i < data.length; i++) {
 
 
-	l2StorageUser = JSON.parse(lStorageUser)
 
-	console.log('entrei')
-	console.log(l2StorageUser)
+			if (localStorage.userData != undefined && localStorage.userData != null && localStorage.userData.idUser == data.idUser) {
 
-	alterarPaginaUserName()
-	aparecer1()
+				saberSeDeu = 1;
 
-} else {
-
-	window.location.replace("index.html")
+			}
 
 
-}
+
+
+		}
+
+		if (saberSeDeu == 1) {
+			userDataExplorar = JSON.parse(localStorage.userData);
+
+			//
+
+
+			lStorageUser = localStorage.userData = JSON.stringify(userDataExplorar)
+
+
+			l2StorageUser = JSON.parse(lStorageUser)
+
+			console.log('entrei')
+			console.log(l2StorageUser)
+
+			alterarPaginaUserName()
+			aparecer1()
+
+		} else {
+			window.location.replace("index.html")
+
+
+		}
+	}
+
+
+
+});
+
+
+
+
 
 function testar12() {
 	userDataExplorar = {
