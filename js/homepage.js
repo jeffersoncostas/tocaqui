@@ -124,6 +124,30 @@ function fecharBarraPesquisa() {
 //
 
 
+// Slider de imagens 
+
+
+
+$(".slider-principal > .container-slider:gt(0)").hide();
+
+setInterval(function () {
+	$('.slider-principal > .container-slider:first')
+		.fadeOut(1000)
+		.next()
+		.fadeIn(1000)
+		.end()
+		.appendTo('.slider-principal');
+}, 5000);
+
+
+
+
+
+
+
+//
+
+
 //Abrir e fechar cadastro
 
 let SaberExplorarPostar = 1;

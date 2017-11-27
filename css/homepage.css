@@ -637,6 +637,13 @@ body {
 	height: calc(100vh - 60px);
 }
 
+.container-slider {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	height: 100%;
+}
+
 .slider-principal .text-slider {
 
 	box-sizing: border-box;
@@ -647,13 +654,22 @@ body {
 }
 
 .slider-principal .text-slider span {
+	font-family: 'karla';
 	color: white;
-	font-size: 24px;
+	font-size: 23px;
 }
 
-.slider-principal .buttons-slider {
+.mark-text {
+	display: inline;
+	font-weight: 600;
+	color: #FFAC1C;
+}
 
+
+.slider-principal .buttons-slider {
+	font-family: 'karla';
 	padding-top: 20px;
+	font-variant-caps: all-small-caps;
 }
 
 .slider-principal .button-publicar {
@@ -670,11 +686,14 @@ body {
 }
 
 .slider-principal .button-publicar span {
-	font-size: 17px;
 	align-self: center;
+	font-size: 18px;
+
 }
 
 .slider-principal .button-explorar {
+	font-size: 12px;
+
 	cursor: pointer;
 	border-radius: 5px;
 	padding: 10px;
@@ -686,19 +705,21 @@ body {
 }
 
 .slider-principal .button-explorar span {
-	font-size: 17px;
 	align-self: center;
+	font-size: 18px;
+
 }
 
 
 .slider-principal .dark-image {
 	position: absolute;
+	bottom: 0;
 	width: 100%;
 	height: calc(100vh - 60px);
 	background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.28));
 }
 
-.slider-principal .imagens-slider {
+.imagens-slider {
 	width: 100%;
 	height: 100%;
 
@@ -707,6 +728,29 @@ body {
 	background-attachment: fixed;
 	background-size: cover;
 	background-position: -300px, 0px;
+}
+
+
+.imagem2 {
+
+	background-image: url(../img/tocaqui3.jpg);
+
+}
+
+.apontador-down {
+	top: calc(100vh - 60px);
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	z-index: 10;
+	width: 100%;
+	height: 30px;
+
+}
+
+.apontador-down img {
+	width: 30px;
+	height: 30px;
 }
 
 /* Oq pode fazer no tocaqui*/
@@ -826,22 +870,3 @@ footer span {
 }
 
 /*Media para o slider de imagens*/
-
-@media screen and (max-height: 452px) {
-
-	.slider-principal .imagens-slider {
-
-		width: 100%;
-		height: 100%;
-
-		background-image: url(../img/tocaqui2.jpg);
-		background-repeat: no-repeat;
-		background-attachment: scroll;
-		background-size: cover;
-		background-position: 0px, 0px;
-
-
-
-	}
-
-}
