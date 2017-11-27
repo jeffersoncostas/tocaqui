@@ -142,7 +142,18 @@ setInterval(function () {
 
 
 
+let apontador = document.querySelector(".apontador-down");
 
+apontador.addEventListener("click", descerP)
+
+function descerP() {
+
+	$(".apontador-down").ready(function () {
+		$("html, body").delay(100).animate({
+			scrollTop: $('.apontador-down').offset().top
+		}, 1300);
+	});
+}
 
 
 //
