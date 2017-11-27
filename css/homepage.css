@@ -687,12 +687,11 @@ body {
 
 .slider-principal .button-publicar span {
 	align-self: center;
-	font-size: 18px;
+	font-size: 15px;
 
 }
 
 .slider-principal .button-explorar {
-	font-size: 12px;
 
 	cursor: pointer;
 	border-radius: 5px;
@@ -706,7 +705,7 @@ body {
 
 .slider-principal .button-explorar span {
 	align-self: center;
-	font-size: 18px;
+	font-size: 15px;
 
 }
 
