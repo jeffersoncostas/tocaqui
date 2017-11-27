@@ -738,19 +738,38 @@ body {
 }
 
 .apontador-down {
-	top: calc(100vh - 40px);
+	top: calc(100vh - 50px);
 	position: absolute;
 	display: flex;
 	justify-content: center;
 	z-index: 1;
 	width: 100%;
 	height: 30px;
-
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+	animation-duration: 1s;
+	animation-name: apontador-mexer
 }
 
 .apontador-down img {
 	width: 30px;
 	height: 30px;
+}
+
+
+@keyframes apontador-mexer {
+	0% {
+		transform: translate(0, 0)
+	}
+	50% {
+		transform: translate(0, 15px)
+	}
+	100% {
+		transform: translate(0, 0)
+	}
+
+
+
 }
 
 /* Oq pode fazer no tocaqui*/
