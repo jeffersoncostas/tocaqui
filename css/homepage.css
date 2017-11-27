@@ -777,10 +777,17 @@ body {
 .content-2 {
 	box-sizing: border-box;
 	padding: 25px 15px;
-	border-top: solid 5px #FFAC1C;
 	width: 100%;
 	height: auto;
+	border-top: solid 5px #FFAC1C;
+
 	background-color: #efefef;
+}
+
+.content-2:nth-child(1) {
+	border-top: none;
+
+
 }
 
 .content-2 #titulo-do-all {

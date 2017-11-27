@@ -280,7 +280,7 @@ let l2StorageUser = null;
 
 console.log(localStorage.userData)
 
-if (localStorage.userData != undefined) {
+if (localStorage.userData != undefined || localStorage.userData != null) {
 
 
 	userDataExplorar = JSON.parse(localStorage.userData);
