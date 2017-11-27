@@ -740,6 +740,7 @@ body {
 }
 
 .apontador-down {
+
 	top: calc(100vh - 100px);
 	position: absolute;
 	display: flex;
