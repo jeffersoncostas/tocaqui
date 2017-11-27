@@ -669,7 +669,6 @@ body {
 .slider-principal .buttons-slider {
 	font-family: 'karla';
 	padding-top: 20px;
-	font-variant-caps: all-small-caps;
 }
 
 .slider-principal .button-publicar {
@@ -687,6 +686,8 @@ body {
 
 .slider-principal .button-publicar span {
 	align-self: center;
+	font-variant-caps: all-small-caps;
+
 	font-size: 10px;
 
 }
@@ -705,6 +706,8 @@ body {
 
 .slider-principal .button-explorar span {
 	align-self: center;
+	font-variant-caps: all-small-caps;
+
 	font-size: 10px;
 
 }
