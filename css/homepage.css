@@ -669,6 +669,7 @@ body {
 .slider-principal .buttons-slider {
 	font-family: 'karla';
 	padding-top: 20px;
+	box-sizing: border-box;
 }
 
 .slider-principal .button-publicar {
