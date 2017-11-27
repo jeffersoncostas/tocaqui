@@ -687,8 +687,8 @@ body {
 
 .slider-principal .button-publicar span {
 	align-self: center;
-
-	font-size: 12px;
+	font-variant-caps: all-small-caps;
+	font-size: 13px;
 
 }
 
@@ -706,8 +706,9 @@ body {
 
 .slider-principal .button-explorar span {
 	align-self: center;
+	font-variant-caps: all-small-caps;
 
-	font-size: 12px;
+	font-size: 13px;
 
 }
 
