@@ -31,7 +31,7 @@
 
 // logar com localstorage
 
-if (localStorage.userData == undefined) {
+if (localStorage.userData == undefined || localStorage.userData == null) {
 
 	console.log("não ta logado")
 
