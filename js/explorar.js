@@ -648,22 +648,25 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 			url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/',
 			success: function (data) {
 				for (let i = 0; i < data.length; i++) {
-
+					let saberseEntrouif = null
 					if (data[i].idUser == l2StorageUser.idUser) {
 						let id1 = data[i].id;
-
+						saberseEntrouif = 1
 						if (data[i].ideiasParticipo == undefined) {
 							let arrayIdeiasParticipo = []
 							arrayIdeiasParticipo.push(idIdeia)
 
 							requisPut(arrayIdeiasParticipo)
 						} else {
-							let id23 = data[i].ideiasParticipo.push(idIdeia);
+							data[i].ideiasParticipo.push(idIdeia);
+
+							let id23 = data[i].ideiasParticipo
 							requisPut(id23)
 						}
+						console.log(data[i].minhasIdeias)
 
 						function requisPut(arrayIdeiasPart) {
-
+							let stringMinhasIdeias = JSON.stringify(data[i].minhasIdeias)
 
 							$.ajax({
 								data: '{"some":"json"}',
@@ -677,7 +680,7 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 									'habilidades': data[i].habilidades,
 									'sobre': data[i].sobre,
 									'conquistas': data[i].conquistas,
-									'minhasIdeias': data[i].minhasIdeias,
+									'minhasIdeias': stringMinhasIdeias,
 									'ideiasParticipo': arrayIdeiasPart
 								},
 								url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/' + id1,
@@ -690,6 +693,14 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 						}
 
 
+
+
+
+					}
+
+
+
+					if (saberseEntrouif == 1) {
 
 						break
 
@@ -717,6 +728,7 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 
 			}
 			setTimeout(mensagem, 700)
+			break
 
 
 		}
