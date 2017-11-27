@@ -650,7 +650,7 @@ body {
 	padding: 20px;
 	z-index: 1;
 	position: absolute;
-	bottom: 10%;
+	bottom: 15%;
 }
 
 .slider-principal .text-slider span {
@@ -740,7 +740,7 @@ body {
 }
 
 .apontador-down {
-	top: calc(100vh - 50px);
+	top: calc(100vh - 85px);
 	position: absolute;
 	display: flex;
 	justify-content: center;
