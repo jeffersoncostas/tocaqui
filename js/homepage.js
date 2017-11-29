@@ -41,9 +41,13 @@ if (localStorage.userData == undefined || localStorage.userData == null) {
 }
 
 
-//
+//cadastrar pelo slider
+
+$("#quero-cadastrar").click(abrirModalCadastrarDireto)
+$("#ja-conta").click(abrirModalLoginDireto)
 
 
+$(".button-cadastrar-top").click(abrirModalCadastrarDireto)
 
 //Abrir e fechar o modal do menu
 

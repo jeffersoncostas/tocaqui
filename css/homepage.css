@@ -739,6 +739,20 @@ body {
 
 }
 
+.button-cadastrar-top {
+	z-index: 2;
+	font-variant-caps: all-small-caps;
+	padding: 15px;
+	right: 0;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.53);
+	position: absolute;
+	top: 70px;
+	border-radius: 5px;
+	border: 2px solid white;
+
+}
+
 .apontador-down {
 
 	top: calc(100vh - 100px);
