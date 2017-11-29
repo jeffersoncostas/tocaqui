@@ -881,7 +881,6 @@ function aparecerIdeiaQueEminha(titulo, criador, habilidades, descricao, precisa
 	let verMaisIdeiaContentLink = document.createElement('a');
 	let verMaisLinkText = document.createTextNode('Ver página da ideia');
 
-	verMaisIdeiaContentLink.href = "ideia.html";
 
 	verMaisIdeiaContentLink.appendChild(verMaisLinkText);
 	verMaisIdeiaContent.appendChild(verMaisIdeiaContentLink);
@@ -889,7 +888,24 @@ function aparecerIdeiaQueEminha(titulo, criador, habilidades, descricao, precisa
 	verMaisIdeiaContent.classList.add('ver-mais-ideia-content');
 
 
-	//ideiaContent.appendChild(verMaisIdeiaContent);
+	ideiaContent.appendChild(verMaisIdeiaContent);
+
+
+	// ver pagina da ideia 
+	verMaisIdeiaContent.addEventListener("click", abrirPaginaIdeia)
+
+	function abrirPaginaIdeia() {
+
+		localStorage.ideiaRecemParticipada = idIdeia;
+
+		window.location.assign("ideia.html");
+
+
+	}
+
+
+
+
 
 	// botao entrar na ideia content 
 
