@@ -30,6 +30,15 @@ body {
 
 /**/
 
+/**/
+
+.arrastar-menu {
+	z-index: 7;
+	width: 10px;
+	height: 100vh;
+	position: fixed;
+}
+
 /*loading*/
 
 .loadings {

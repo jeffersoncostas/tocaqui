@@ -9,6 +9,23 @@ botaoMenuModal.addEventListener('click', abrirMenuModal)
 
 menuModalBg.addEventListener('click', fecharMenuModal)
 
+
+let arrastarMenu = document.querySelector(".arrastar-menu")
+
+let hammertime = Hammer(menuModal).on("swipeleft", function (event) {
+
+	fecharMenuModal()
+
+});
+let hammertime2 = Hammer(menuModal).on("swiperight", function (event) {
+
+	abrirMenuModal()
+
+});
+
+
+
+
 function abrirMenuModal() {
 
 
