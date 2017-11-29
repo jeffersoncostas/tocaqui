@@ -63,6 +63,15 @@ let hammertime = Hammer(menuModal).on("swipeleft", function (event) {
 });
 
 
+let arrastarMenu = document.querySelector(".arrastar-menu")
+let hammertime2 = Hammer(arrastarMenu).on("swiperight", function (event) {
+
+	abrirMenuModal()
+
+});
+
+
+
 botaoMenuModal.addEventListener('click', abrirMenuModal)
 
 menuModalBg.addEventListener('click', fecharMenuModal)
