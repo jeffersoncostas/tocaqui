@@ -33,8 +33,10 @@ body {
 /**/
 
 .arrastar-menu {
+	background-color: black;
 	z-index: 7;
 	width: 10px;
+	bottom: -60px;
 	height: 100vh;
 	position: fixed;
 }
