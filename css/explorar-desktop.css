@@ -71,7 +71,7 @@
 	.lista-ideias {
 
 		box-sizing: border-box;
-		padding: 10px 20px 20px;
+		padding: 10px 120px 20px;
 		overflow: auto;
 	}
 
@@ -143,12 +143,12 @@
 	}
 
 	.barra-vertical {
-
+		z-index: 4;
 		display: flex;
 		width: 120px;
 		height: 100vh;
 		position: fixed;
-		background-color: black;
+		background-color: #362c2b;
 
 	}
 
