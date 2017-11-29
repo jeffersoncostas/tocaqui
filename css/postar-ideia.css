@@ -261,6 +261,13 @@ body {
 
 }
 
+#button-li-postar-nova-ideia {
+	background-image: url('../vectors/outras_ideias.svg');
+	background-repeat: no-repeat;
+	background-size: 40px;
+	background-position: 10px, 50%;
+}
+
 #ul-minhas-ideias {
 	display: none;
 }

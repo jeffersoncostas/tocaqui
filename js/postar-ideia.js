@@ -91,6 +91,24 @@ function fecharBarraPesquisa() {
 
 //
 
+// ABRIR MEU PERFIL
+
+
+let buttonsMeuPerfil = document.querySelectorAll('.meu-perfil');
+
+for (let i = 0; i < buttonsMeuPerfil.length; i++) {
+
+	buttonsMeuPerfil[i].addEventListener("click", abrirMeuPerfil)
+}
+
+
+function abrirMeuPerfil() {
+
+	window.location.assign("perfil.html");
+
+}
+//
+
 // abrir submenu
 let buttonMinhasIdeias = document.querySelector("#button-minhas-ideias")
 
@@ -362,7 +380,7 @@ function postarIdeia() {
 				console.log(localStorage.userData)
 
 
-				//window.location.replace("explorar.html")
+				localStorage.ideiaRecemParticipada = idIdeia;
 
 
 				adicionarIdeiaUsuarioServidor(idIdeia, l2StorageUser.idUser)
@@ -456,7 +474,7 @@ function postarIdeia() {
 				$(".loadings")
 					.css("display", "flex")
 					.fadeOut();
-				window.location.replace("explorar.html");
+				window.location.replace("ideia.html");
 
 
 			}

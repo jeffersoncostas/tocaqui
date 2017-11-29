@@ -590,7 +590,6 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 	let verMaisIdeiaContentLink = document.createElement('a');
 	let verMaisLinkText = document.createTextNode('Ver página da ideia');
 
-	verMaisIdeiaContentLink.href = "ideia.html";
 
 	verMaisIdeiaContentLink.appendChild(verMaisLinkText);
 	verMaisIdeiaContent.appendChild(verMaisIdeiaContentLink);
@@ -715,13 +714,9 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 
 
 
-					}
-
-
-
-					if (saberseEntrouif == 1) {
-
+					} else if (saberseEntrouif == 1) {
 						break
+
 
 
 					}
@@ -732,7 +727,6 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 		function enviarpLocalStorage(data) {
 
 			l2StorageUser = data
-
 			localStorage.userData = JSON.stringify(l2StorageUser);
 			localStorage.ideiaRecemParticipada = idIdeia;
 			console.log(l2StorageUser)
@@ -746,8 +740,7 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 				window.location.assign("mensagens.html")
 
 			}
-			setTimeout(mensagem, 700)
-			break
+			setTimeout(mensagem, 200)
 
 
 		}
@@ -762,6 +755,18 @@ function aparecerIdeiasPagina(titulo, criador, habilidades, descricao, precisaDe
 
 	}
 
+
+	// ver pagina da ideia 
+	verMaisIdeiaContent.addEventListener("click", abrirPaginaIdeia)
+
+	function abrirPaginaIdeia() {
+
+		localStorage.ideiaRecemParticipada = idIdeia;
+
+		window.location.assign("ideia.html");
+
+
+	}
 
 
 

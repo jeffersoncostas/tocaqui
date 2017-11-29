@@ -780,7 +780,7 @@ function requisicaoCadastrar(fullName, email, password) {
 							.css("display", "flex")
 							.fadeOut();
 
-						window.location.replace("explorar.html")
+						window.location.replace("perfil.html")
 
 					} else {
 						$(".loadings")

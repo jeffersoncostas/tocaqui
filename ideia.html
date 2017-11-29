@@ -5,6 +5,9 @@
 	<meta charset="UTF-8">
 	<title>Tocaqui! | Ideia</title>
 	<link rel="stylesheet" href="css/ideia.css">
+	<link rel="stylesheet" href="css/explorar.css">
+	<script src="js/jquery.js"></script>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#362c2b">
 
@@ -12,20 +15,56 @@
 </head>
 
 <body>
+	<div class="loadings">
+		<div class="loading-circle"></div>
+		<div class="loading-background"></div>
+
+	</div>
+
+
+
+
+
+	<!-- Pop Up Participar ideia-->
+	<div class="modal-participar-ideia">
+
+		<div class="modal-participar">
+			<div class="close-modal-participar"><span>x</span></div>
+			<span class="title-modal-participar">Você está a um passo de participar da ideia de</span>
+			<div id="titulo-ideia-popup"><span id="titulo2-ideia-popup"></span></div>
+		</div>
+
+		<div id="button-confirmar-participacao"><span>ok!</span></div>
+
+	</div>
+
+	<!---->
+
+
+
 
 	<!--Menu sanduiche-->
 	<div class="menu-modal">
 
-		<div class="logo-simbolo"><img src="vectors/toca-aqui-logo-simbolo.svg" alt=""></div>
+		<div class="logo-simbolo meu-perfil"><img src="vectors/user-white.svg" alt=""></div>
+		<div class="user-name-menu meu-perfil"></div>
 
 		<ul id="ul-menu">
-			<li id='button-cadastrar'>explorar ideias</li>
-			<li>minhas ideias</li>
-			<li>postar nova ideia</li>
-			<li>ideias que eu participo</li>
-			<li>mensagens</li>
 
-			<li>sobre</li>
+			<li id='explorar-ideias'>Explorar</li>
+			<li id="button-li-postar-nova-ideia"> Postar nova ideia</li>
+			<li id='button-minhas-ideias'>Ideias</li>
+
+			<ul id='ul-minhas-ideias'>
+				<li class="li-minhas-ideias">Minhas ideias</li>
+				<li class="li-minhas-ideias">Ideias que participo</li>
+			</ul>
+
+			<li id="button-li-mensagens">Mensagens</li>
+
+			<li>Sobre</li>
+			<li id="button-sair">Sair</li>
+
 		</ul>
 	</div>
 	<div class="menu-modal-bg"></div>
@@ -64,18 +103,18 @@
 		<div class="categoria-pagina-ideia"><span>#geral</span><span>#entretenimento</span></div>
 
 		<div class="titulo-criador-localizacao">
-			<div class="titulo-pagina-ideia"><span id='id-titulo-pagina-ideia'>Ornamentação de Festas</span></div>
+			<div class="titulo-pagina-ideia"><span id='id-titulo-pagina-ideia'></span></div>
 
 			<div class="criador-localizacao-pagina">
 
-				<div class="criador-pagina-ideia"><span>Lúcia Pimentel</span></div>
+				<div class="criador-pagina-ideia"><span id="criador-id"></span></div>
 
-				<div class="localizacao-pagina-ideia"><img src="vectors/localizacao-rosa-icon.svg" alt=""><span>São paulo</span></div>
+				<div class="localizacao-pagina-ideia"><img src="vectors/localizacao-rosa-icon.svg" alt=""><span id="localizacao-ideia"></span></div>
 			</div>
 
 		</div>
 
-		<div class="participantes-pagina-ideia"><img src="vectors/participantes2-icon.svg" alt=""><span id='id-participantes-pagina-ideia'>participantes</span> <span>Jefferson Costa, Jêsca Nobre</span> </div>
+		<div class="participantes-pagina-ideia"><img src="vectors/participantes2-icon.svg" alt=""><span id='id-participantes-pagina-ideia'>participantes</span> <span id="participantes-ideia-id"></span> </div>
 
 		<div class="chat-pagina-ideia"><img src="vectors/chat-icon.svg" alt=""><span id='id-participantes-pagina-ideia'>abrir conversa</span> </div>
 
@@ -84,7 +123,7 @@
 
 			<span class='id-subdivisor-pagina-ideia'> o que é a ideia </span>
 			<img src="img/ornamentacao-festa.jpg" id='id-imagem-pagina-ideia' alt="">
-			<span id='id-descricao-text-pagina-ideia'>			Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis consequat molestie. Ut dictum aliquet rhoncus. Nullam ante purus, molestie eget fringilla eu, lobortis eu nibh. Duis dictum, lectus sagittis sagittis volutpat, elit dui viverra felis, in volutpat elit est vel erat. Suspendisse ultricies nunc eu ante blandit eleifend. Praesent posuere lorem at dui vestibulum sagittis. Suspendisse rutrum congue libero, non volutpat mi. Nulla rutrum erat ipsum. Mauris vehicula velit eros, et sodales lorem posuere finibus. Donec porttitor vestibulum purus id sagittis. Mauris ultricies massa sed libero posuere, malesuada cursus lacus sagittis. Integer at tristique nulla.</span>
+			<span id='id-descricao-text-pagina-ideia'></span>
 
 
 		</div>
@@ -94,7 +133,7 @@
 			<span class='id-subdivisor-pagina-ideia'> o que precisa</span>
 
 
-			<span class='id-qprecisa-pagina-ideia'>			transporte dos materiais, pessoa que cuide da iluminação</span>
+			<span class='id-qprecisa-pagina-ideia'>			</span>
 
 
 		</div>
