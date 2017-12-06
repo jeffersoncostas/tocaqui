@@ -12,20 +12,20 @@ menuModalBg.addEventListener('click', fecharMenuModal)
 function abrirMenuModal() {
 
 
-	menuModal.style.display = 'flex';
-	menuModalBg.style.display = 'block'
+    menuModal.style.display = 'flex';
+    menuModalBg.style.display = 'block'
 
 
 }
 
 function fecharMenuModal() {
-	function display() {
-		menuModal.style.display = 'none';
-		menuModal.style.animationName = '';
-	}
-	menuModal.style.animationName = 'fechar-menu-modal';
-	menuModalBg.style.display = 'none'
-	setTimeout(display, 700)
+    function display() {
+        menuModal.style.display = 'none';
+        menuModal.style.animationName = '';
+    }
+    menuModal.style.animationName = 'fechar-menu-modal';
+    menuModalBg.style.display = 'none'
+    setTimeout(display, 700)
 }
 
 //
@@ -47,44 +47,44 @@ bgBarraPesquisa.addEventListener('click', fecharBarraPesquisa)
 
 function abrirBarraPesquisa() {
 
-	if (barraPesquisa.classList.contains('barra-pesquisa-active')) {
+    if (barraPesquisa.classList.contains('barra-pesquisa-active')) {
 
-		function display() {
-			barraPesquisa.style.display = ''
-		}
-		barraPesquisa.classList.remove('barra-pesquisa-active')
+        function display() {
+            barraPesquisa.style.display = ''
+        }
+        barraPesquisa.classList.remove('barra-pesquisa-active')
 
-		bgBarraPesquisa.style.display = 'none';
-		ListaIdeias.style.filter = '';
-		footer.style.filter = '';
+        bgBarraPesquisa.style.display = 'none';
+        ListaIdeias.style.filter = '';
+        footer.style.filter = '';
 
-		setTimeout(display, 700)
-
-
-	} else {
-		function display() {
-
-			barraPesquisa.classList.add('barra-pesquisa-active')
-		}
-
-		bgBarraPesquisa.style.display = 'block'
-		barraPesquisa.style.display = 'block'
+        setTimeout(display, 700)
 
 
+    } else {
+        function display() {
 
-		setTimeout(display, 10)
+            barraPesquisa.classList.add('barra-pesquisa-active')
+        }
+
+        bgBarraPesquisa.style.display = 'block'
+        barraPesquisa.style.display = 'block'
 
 
-	}
+
+        setTimeout(display, 10)
+
+
+    }
 
 
 }
 
 function fecharBarraPesquisa() {
 
-	barraPesquisa.classList.remove('barra-pesquisa-active')
+    barraPesquisa.classList.remove('barra-pesquisa-active')
 
-	bgBarraPesquisa.style.display = 'none'
+    bgBarraPesquisa.style.display = 'none'
 
 
 }
@@ -98,13 +98,13 @@ let buttonsMeuPerfil = document.querySelectorAll('.meu-perfil');
 
 for (let i = 0; i < buttonsMeuPerfil.length; i++) {
 
-	buttonsMeuPerfil[i].addEventListener("click", abrirMeuPerfil)
+    buttonsMeuPerfil[i].addEventListener("click", abrirMeuPerfil)
 }
 
 
 function abrirMeuPerfil() {
 
-	window.location.assign("perfil.html");
+    window.location.assign("perfil.html");
 
 }
 //
@@ -115,15 +115,15 @@ let buttonMinhasIdeias = document.querySelector("#button-minhas-ideias")
 buttonMinhasIdeias.addEventListener('click', abrirUlMinhasIdeias)
 
 function abrirUlMinhasIdeias() {
-	let ulMinhasIdeias = document.querySelector('#ul-minhas-ideias')
-	if (ulMinhasIdeias.style.display == 'block') {
-		$("#ul-minhas-ideias").slideUp('slow');
+    let ulMinhasIdeias = document.querySelector('#ul-minhas-ideias')
+    if (ulMinhasIdeias.style.display == 'block') {
+        $("#ul-minhas-ideias").slideUp('slow');
 
 
-	} else {
-		$("#ul-minhas-ideias").slideDown('slow');
+    } else {
+        $("#ul-minhas-ideias").slideDown('slow');
 
-	}
+    }
 
 }
 
@@ -139,10 +139,21 @@ buttonExplorarIdeias.addEventListener('click', abrirExplorar)
 
 function abrirExplorar() {
 
-	window.location.replace("explorar.html")
+    window.location.replace("explorar.html")
 
 
 }
+
+// cancelar ideia
+
+let buttonCancelarPostar = document.querySelector(".botao-cancelar-postar");
+
+
+buttonCancelarPostar.addEventListener('click', abrirExplorar)
+
+
+
+//
 
 
 // SAIR 
@@ -154,27 +165,27 @@ buttonSair.addEventListener("click", sairLogout)
 
 function sairLogout() {
 
-	fecharMenuModal()
+    fecharMenuModal()
 
-	$(".loadings")
-		.css("display", "flex")
-		.fadeIn();
-	localStorage.userData = null;
-	localStorage.saberLog = 1;
-
-
-	function display() {
-
-		$(".loadings")
-			.css("display", "flex")
-			.fadeOut();
-
-		window.location.replace("index.html")
+    $(".loadings")
+        .css("display", "flex")
+        .fadeIn();
+    localStorage.userData = null;
+    localStorage.saberLog = 1;
 
 
-	}
+    function display() {
 
-	setTimeout(display, 700)
+        $(".loadings")
+            .css("display", "flex")
+            .fadeOut();
+
+        window.location.replace("index.html")
+
+
+    }
+
+    setTimeout(display, 700)
 
 }
 //
@@ -192,52 +203,52 @@ let lStorageUser = localStorage.userData = JSON.stringify(userDataExplorar)
 
 
 $(".loadings")
-	.css("display", "flex")
-	.fadeIn();
+    .css("display", "flex")
+    .fadeIn();
 
 
 let l2StorageUser = JSON.parse(localStorage.userData)
 
 if (localStorage.userData != null) {
 
-	console.log('entrei')
-	console.log(l2StorageUser)
+    console.log('entrei')
+    console.log(l2StorageUser)
 
-	alterarPaginaUserName()
+    alterarPaginaUserName()
 
 } else {
 
-	window.location.replace("index.html")
+    window.location.replace("index.html")
 
 
 }
 
 
 function testar12() {
-	userDataExplorar = {
-		'idUser': '1',
-		'name': 'Jefferson Costa',
-		'email': 'jefferson@mail.com',
-		'senha': '123456',
-		'habilidades': 'Vendedor',
-		'sobre': 'Sou uma pessoa muito legal eheheheh',
-		'conquistas': [1, 2],
-		'minhasIdeias': [],
-		'ideiasParticipo': []
-	}
+    userDataExplorar = {
+        'idUser': '1',
+        'name': 'Jefferson Costa',
+        'email': 'jefferson@mail.com',
+        'senha': '123456',
+        'habilidades': 'Vendedor',
+        'sobre': 'Sou uma pessoa muito legal eheheheh',
+        'conquistas': [1, 2],
+        'minhasIdeias': [],
+        'ideiasParticipo': []
+    }
 
 }
 
 function alterarPaginaUserName() {
 
-	let spanUserNameMenu = document.createElement('span')
-	let userNameMenu = document.querySelector('.user-name-menu')
-	let spanText = document.createTextNode(l2StorageUser.name)
-	spanUserNameMenu.appendChild(spanText)
-	userNameMenu.appendChild(spanUserNameMenu)
-	$(".loadings")
-		.css("display", "flex")
-		.fadeOut();
+    let spanUserNameMenu = document.createElement('span')
+    let userNameMenu = document.querySelector('.user-name-menu')
+    let spanText = document.createTextNode(l2StorageUser.name)
+    spanUserNameMenu.appendChild(spanText)
+    userNameMenu.appendChild(spanUserNameMenu)
+    $(".loadings")
+        .css("display", "flex")
+        .fadeOut();
 
 
 }
@@ -251,239 +262,239 @@ buttonPostarIdeiaContent.addEventListener('click', postarIdeia)
 
 function postarIdeia() {
 
-	function erroAnimMsg(msgErro) {
+    function erroAnimMsg(msgErro) {
 
-		$(".loadings")
-			.css("display", "flex")
-			.fadeOut();
+        $(".loadings")
+            .css("display", "flex")
+            .fadeOut();
 
 
-		$('#span-erro-postar-ideia').empty()
+        $('#span-erro-postar-ideia').empty()
 
 
 
-		$('#span-erro-postar-ideia').append(document.createTextNode(msgErro));
+        $('#span-erro-postar-ideia').append(document.createTextNode(msgErro));
 
 
 
 
-		$(".erros-modal-login").slideDown("slow");
+        $(".erros-modal-login").slideDown("slow");
 
 
-		function desaparecer() {
-			$(".erros-modal-login").slideUp("slow");
+        function desaparecer() {
+            $(".erros-modal-login").slideUp("slow");
 
 
-		}
+        }
 
-		setTimeout(desaparecer, 2500)
+        setTimeout(desaparecer, 2500)
 
 
-	}
+    }
 
 
 
 
 
-	$(".loadings")
-		.css("display", "flex")
-		.fadeIn();
+    $(".loadings")
+        .css("display", "flex")
+        .fadeIn();
 
-	let nomeIdeiaPostar = document.querySelector('#nome-ideia-postar').value.trim();
+    let nomeIdeiaPostar = document.querySelector('#nome-ideia-postar').value.trim();
 
-	let categoriaIdeiaPostar = document.querySelector("#categoria-ideia-postar");
+    let categoriaIdeiaPostar = document.querySelector("#categoria-ideia-postar");
 
-	let categoriaEscolhida = categoriaIdeiaPostar.options[categoriaIdeiaPostar.selectedIndex].value;
+    let categoriaEscolhida = categoriaIdeiaPostar.options[categoriaIdeiaPostar.selectedIndex].value;
 
-	let descricaoIdeia = document.querySelector('#text-area-descricao').value.trim();
+    let descricaoIdeia = document.querySelector('#text-area-descricao').value.trim();
 
-	let habilidadesIdeiaPostar = document.querySelector("#habilidades-ideia-postar").value.trim()
+    let habilidadesIdeiaPostar = document.querySelector("#habilidades-ideia-postar").value.trim()
 
-	let imagemIdeiaPostar = document.querySelector("#imagem-ideia-postar").value.trim()
+    let imagemIdeiaPostar = document.querySelector("#imagem-ideia-postar").value.trim()
 
-	if (imagemIdeiaPostar == null) {
-		imagemIdeiaPostar.value = '';
-	} else {}
+    if (imagemIdeiaPostar == null) {
+        imagemIdeiaPostar.value = '';
+    } else {}
 
 
-	if (nomeIdeiaPostar.length >= 5 && categoriaEscolhida != null && descricaoIdeia.length >= 8 && habilidadesIdeiaPostar.length >= 4) {
+    if (nomeIdeiaPostar.length >= 5 && categoriaEscolhida != null && descricaoIdeia.length >= 8 && habilidadesIdeiaPostar.length >= 4) {
 
-		requiEnviarIdeia()
+        requiEnviarIdeia()
 
 
-	} else {
-		let erroMensagem = 'psiu... faltam informações em algum(ns) campo(s)'
-		erroAnimMsg(erroMensagem)
-	}
+    } else {
+        let erroMensagem = 'psiu... faltam informações em algum(ns) campo(s)'
+        erroAnimMsg(erroMensagem)
+    }
 
-	function requiEnviarIdeia() {
-		$.ajax({
-			data: '{"some":"json"}',
-			dataType: 'json',
-			type: 'GET',
-			url: 'http://rest.learncode.academy/api/tocaqui/teste-ideias7/',
-			success: function (data) {
-				if (data.length <= 0) {
+    function requiEnviarIdeia() {
+        $.ajax({
+            data: '{"some":"json"}',
+            dataType: 'json',
+            type: 'GET',
+            url: 'http://rest.learncode.academy/api/tocaqui/teste-ideias7/',
+            success: function (data) {
+                if (data.length <= 0) {
 
-					enviarAoserv(0);
+                    enviarAoserv(0);
 
-				} else {
-					let ideiaId = parseInt(data[data.length - 1].idIdeia);
+                } else {
+                    let ideiaId = parseInt(data[data.length - 1].idIdeia);
 
-					let id12 = ideiaId + 1;
-					console.log(id12)
-					enviarAoserv(id12);
+                    let id12 = ideiaId + 1;
+                    console.log(id12)
+                    enviarAoserv(id12);
 
-				}
+                }
 
 
-			},
-			error: function (XMLHttpRequest, textStatus, errorThrown) {
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
 
 
 
-				let erroMensagem = 'iih, está sem conexão com a internet :( '
-				erroAnimMsg(erroMensagem)
+                let erroMensagem = 'iih, está sem conexão com a internet :( '
+                erroAnimMsg(erroMensagem)
 
 
 
-			}
-		});
+            }
+        });
 
-	}
+    }
 
 
-	function enviarAoserv(idIdeia) {
-		$.ajax({
-			data: '{"some":"json"}',
-			dataType: 'json',
-			type: 'POST',
-			url: 'http://rest.learncode.academy/api/tocaqui/teste-ideias7/',
-			data: {
-				'idIdeia': idIdeia,
-				'categoriaIdeia': categoriaEscolhida,
-				'nomeIdeia': nomeIdeiaPostar,
-				'nomeCriador': l2StorageUser.name,
-				'habilidadesCriador': l2StorageUser.habilidades,
-				'participantes': [0],
-				'imagemDaIdeia': imagemIdeiaPostar,
-				'descricaoDaIdeia': descricaoIdeia,
-				'oqPrecisa': habilidadesIdeiaPostar,
-				'termometro': '100%',
-			},
-			success: function (data) {
+    function enviarAoserv(idIdeia) {
+        $.ajax({
+            data: '{"some":"json"}',
+            dataType: 'json',
+            type: 'POST',
+            url: 'http://rest.learncode.academy/api/tocaqui/teste-ideias7/',
+            data: {
+                'idIdeia': idIdeia,
+                'categoriaIdeia': categoriaEscolhida,
+                'nomeIdeia': nomeIdeiaPostar,
+                'nomeCriador': l2StorageUser.name,
+                'habilidadesCriador': l2StorageUser.habilidades,
+                'participantes': [0],
+                'imagemDaIdeia': imagemIdeiaPostar,
+                'descricaoDaIdeia': descricaoIdeia,
+                'oqPrecisa': habilidadesIdeiaPostar,
+                'termometro': '100%',
+            },
+            success: function (data) {
 
-				l2StorageUser.minhasIdeias.push(idIdeia)
+                l2StorageUser.minhasIdeias.push(idIdeia)
 
-				localStorage.userData = JSON.stringify(l2StorageUser);
+                localStorage.userData = JSON.stringify(l2StorageUser);
 
-				console.log(localStorage.userData)
+                console.log(localStorage.userData)
 
 
-				localStorage.ideiaRecemParticipada = idIdeia;
+                localStorage.ideiaRecemParticipada = idIdeia;
 
 
-				adicionarIdeiaUsuarioServidor(idIdeia, l2StorageUser.idUser)
+                adicionarIdeiaUsuarioServidor(idIdeia, l2StorageUser.idUser)
 
 
 
-			},
-			error: function (XMLHttpRequest, textStatus, errorThrown) {
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
 
-				let erroMensagem = 'iih, está sem conexão com a internet :( '
-				erroAnimMsg(erroMensagem)
+                let erroMensagem = 'iih, está sem conexão com a internet :( '
+                erroAnimMsg(erroMensagem)
 
 
 
-			}
+            }
 
-		});
-	}
+        });
+    }
 
 
-	function adicionarIdeiaUsuarioServidor(idIdeia, idusuario) {
+    function adicionarIdeiaUsuarioServidor(idIdeia, idusuario) {
 
-		console.log('entrei no adicionar ideia usuario')
+        console.log('entrei no adicionar ideia usuario')
 
-		$.ajax({
-			data: '{"some":"json"}',
-			dataType: 'json',
-			type: 'GET',
-			url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/',
-			success: function (data) {
-				for (let i = 0; i < data.length; i++) {
+        $.ajax({
+            data: '{"some":"json"}',
+            dataType: 'json',
+            type: 'GET',
+            url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/',
+            success: function (data) {
+                for (let i = 0; i < data.length; i++) {
 
 
-					if (data[i].idUser == idusuario) {
+                    if (data[i].idUser == idusuario) {
 
-						data[i].minhasIdeias.push(idIdeia)
+                        data[i].minhasIdeias.push(idIdeia)
 
-						let id2 = data[i].id
-						let data2 = data[i].minhasIdeias
+                        let id2 = data[i].id
+                        let data2 = data[i].minhasIdeias
 
-						console.log(data2)
+                        console.log(data2)
 
-						$.ajax({
-							data: '{"some":"json"}',
-							dataType: 'json',
-							type: 'PUT',
-							data: {
-								'idUser': data[i].idUser,
-								'name': data[i].name,
-								'email': data[i].email,
-								'senha': data[i].senha,
-								'habilidades': data[i].habilidades,
-								'sobre': data[i].sobre,
-								'conquistas': data[i].conquistas,
-								'minhasIdeias': data2,
-								'ideiasParticipo': data[i].ideiasParticipo
-							},
-							url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/' + id2,
-							success: mudarDePagina(),
-							error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        $.ajax({
+                            data: '{"some":"json"}',
+                            dataType: 'json',
+                            type: 'PUT',
+                            data: {
+                                'idUser': data[i].idUser,
+                                'name': data[i].name,
+                                'email': data[i].email,
+                                'senha': data[i].senha,
+                                'habilidades': data[i].habilidades,
+                                'sobre': data[i].sobre,
+                                'conquistas': data[i].conquistas,
+                                'minhasIdeias': data2,
+                                'ideiasParticipo': data[i].ideiasParticipo
+                            },
+                            url: 'http://rest.learncode.academy/api/tocaqui/usuarios6/' + id2,
+                            success: mudarDePagina(),
+                            error: function (XMLHttpRequest, textStatus, errorThrown) {
 
-								let erroMensagem = 'iih, está sem conexão com a internet :( '
-								erroAnimMsg(erroMensagem)
+                                let erroMensagem = 'iih, está sem conexão com a internet :( '
+                                erroAnimMsg(erroMensagem)
 
 
 
-							}
+                            }
 
-						});
+                        });
 
-						break
+                        break
 
 
 
-					}
+                    }
 
-				}
+                }
 
-			}
+            }
 
-		});
+        });
 
 
-		function mudarDePagina() {
-			console.log('ideia adicionada no usuario!');
+        function mudarDePagina() {
+            console.log('ideia adicionada no usuario!');
 
 
 
 
-			function mudaraPagina() {
-				$(".loadings")
-					.css("display", "flex")
-					.fadeOut();
-				window.location.replace("ideia.html");
+            function mudaraPagina() {
+                $(".loadings")
+                    .css("display", "flex")
+                    .fadeOut();
+                window.location.replace("ideia.html");
 
 
-			}
+            }
 
-			setTimeout(mudaraPagina, 800)
+            setTimeout(mudaraPagina, 800)
 
-		}
+        }
 
-	}
+    }
 
 
 }

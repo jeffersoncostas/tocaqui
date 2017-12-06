@@ -2,86 +2,89 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Tocaqui! | Postar Ideia</title>
-	<link rel="stylesheet" href="css/postar-ideia.css">
-	<script src="js/jquery.js"></script>
+    <meta charset="UTF-8">
+    <title>Tocaqui! | Postar Ideia</title>
+    <link rel="stylesheet" href="css/postar-ideia.css">
+    <script src="js/jquery.js"></script>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#362c2b">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#362c2b">
 
 </head>
 
 <body>
 
-	<div class="loadings">
-		<div class="loading-circle"></div>
-		<div class="loading-background"></div>
+    <div class="loadings">
+        <div class="loading-circle"></div>
+        <div class="loading-background"></div>
 
-	</div>
+    </div>
 
-	<!--Menu sanduiche-->
-	<div class="menu-modal">
+    <!--Menu sanduiche-->
+    <div class="menu-modal">
 
-		<div class="logo-simbolo meu-perfil"><img src="vectors/user-white.svg" alt=""></div>
-		<div class="user-name-menu meu-perfil"></div>
+        <div class="logo-simbolo meu-perfil"><img src="vectors/user-white.svg" alt=""></div>
+        <div class="user-name-menu meu-perfil"></div>
 
-		<ul id="ul-menu">
+        <ul id="ul-menu">
 
-			<li id='explorar-ideias'>Explorar</li>
-			<li id="button-li-postar-nova-ideia"> Postar nova ideia</li>
-			<li id='button-minhas-ideias'>Ideias</li>
+            <li id='explorar-ideias'>Explorar</li>
+            <li id="button-li-postar-nova-ideia"> Postar nova ideia</li>
+            <li id='button-minhas-ideias'>Ideias</li>
 
-			<ul id='ul-minhas-ideias'>
-				<li class="li-minhas-ideias">Minhas ideias</li>
-				<li class="li-minhas-ideias">Ideias que participo</li>
-			</ul>
+            <ul id='ul-minhas-ideias'>
+                <li class="li-minhas-ideias">Minhas ideias</li>
+                <li class="li-minhas-ideias">Ideias que participo</li>
+            </ul>
 
-			<li id="button-li-mensagens">Mensagens</li>
+            <li id="button-li-mensagens">Mensagens</li>
 
-			<li>Sobre</li>
-			<li id="button-sair">Sair</li>
+            <li>Sobre</li>
+            <li id="button-sair">Sair</li>
 
-		</ul>
-	</div>
-	<div class="menu-modal-bg"></div>
-	<!---->
-
-
-	<!--Barra pesquisa-->
-	<div class="barra-pesquisa"><span>Busque por palavra chave ou por localização</span>
-		<form action=""> <input id='input-pesquisar' type="text" placeholder="faça uma busca..."></form>
-	</div>
-	<div class="bg-barra-pesquisa"></div>
+        </ul>
+    </div>
+    <div class="menu-modal-bg"></div>
+    <!---->
 
 
-	<!---->
+    <!--Barra pesquisa-->
+    <div class="barra-pesquisa"><span>Busque por palavra chave ou por localização</span>
+        <form action=""> <input id='input-pesquisar' type="text" placeholder="faça uma busca..."></form>
+    </div>
+    <div class="bg-barra-pesquisa"></div>
 
 
-	<!--Barra horizontal-->
+    <!---->
 
 
-	<header class="barra-cima">
+    <!--Barra horizontal-->
 
-		<div class="menu-1">&#9776</div>
-		<div class="logo-tocaqui"><img src="vectors/toca-aqui-logo.svg" alt="logo-toca-aqui"></div>
-		<div class="pesquisar"><img src="vectors/lupa-pesquisar-branco.svg" alt="pesquisar"></div>
-	</header>
-	<!--	-->
 
-	<!--Content postar ideia-->
-	<div class="postar-ideia-content">
-		<div class="titulo-ideia-content"><span>postar ideias</span></div>
+    <header class="barra-cima">
 
-		<div class="titulo2-ideia-content"><span>Nos conte mais sobre sua ideia!</span></div>
+        <div class="menu-1">&#9776</div>
+        <div class="logo-tocaqui"><img src="vectors/toca-aqui-logo.svg" alt="logo-toca-aqui"></div>
+        <div class="pesquisar"><img src="vectors/lupa-pesquisar-branco.svg" alt="pesquisar"></div>
+    </header>
+    <!--	-->
 
-		<form action="">
 
-			<div class="titulos-input-ideia-content"><span>qual o nome da sua ideia? *</span></div>
-			<input type="text" id='nome-ideia-postar' placeholder="ex:ornamentação de festas">
 
-			<div class="titulos-input-ideia-content"><span>qual a categoria da ideia? *</span></div>
-			<select id="categoria-ideia-postar">
+    <!--Content postar ideia-->
+    <div class="postar-ideia-content">
+        <div class="titulo-ideia-content"><span>postar ideias</span></div>
+        <div class="botao-cancelar-postar"><span>x</span></div>
+
+        <div class="titulo2-ideia-content"><span>Nos conte mais sobre sua ideia!</span></div>
+
+        <form action="">
+
+            <div class="titulos-input-ideia-content"><span>qual o nome da sua ideia? *</span></div>
+            <input type="text" id='nome-ideia-postar' placeholder="ex:ornamentação de festas">
+
+            <div class="titulos-input-ideia-content"><span>qual a categoria da ideia? *</span></div>
+            <select id="categoria-ideia-postar">
   <option value="geral" >Geral</option>
   <option value="culinaria" disabled>Culinária</option>
   <option value="programacao" disabled>Programação</option>
@@ -91,30 +94,30 @@
 
 
 </select>
-			<div class="titulos-input-ideia-content"><span>descreva sua ideia *	</span></div>
-			<textarea id="text-area-descricao" rows="10" cols="90">
+            <div class="titulos-input-ideia-content"><span>descreva sua ideia *	</span></div>
+            <textarea id="text-area-descricao" rows="10" cols="90">
 </textarea>
 
-			<div class="titulos-input-ideia-content"><span>quais as habilidades necessárias para realizar a ideia? *	</span></div>
-			<input type="text" id="habilidades-ideia-postar" placeholder="ex:cozinhar, lavar louça">
+            <div class="titulos-input-ideia-content"><span>quais as habilidades necessárias para realizar a ideia? *	</span></div>
+            <input type="text" id="habilidades-ideia-postar" placeholder="ex:cozinhar, lavar louça">
 
-			<div class="titulos-input-ideia-content"><span>adicione uma imagem para sua ideia	</span></div>
-			<input type="text" id="imagem-ideia-postar" placeholder="ex:https://i.imgur.com/U6Scln7.jpg">
+            <div class="titulos-input-ideia-content"><span>adicione uma imagem para sua ideia	</span></div>
+            <input type="text" id="imagem-ideia-postar" placeholder="ex:https://i.imgur.com/U6Scln7.jpg">
 
-			<div class="erros-modal-login"><span id="span-erro-postar-ideia"></span></div>
+            <div class="erros-modal-login"><span id="span-erro-postar-ideia"></span></div>
 
 
-			<div class="button-postar-ideia-content"><span>postar!</span></div>
-		</form>
+            <div class="button-postar-ideia-content"><span>postar!</span></div>
+        </form>
 
-		<!--
+        <!--
 	
 	psiu... faltam informações em algum(ns) campo(s)
 	-->
 
-	</div>
+    </div>
 
-	<script src='js/postar-ideia.js'></script>
+    <script src='js/postar-ideia.js'></script>
 </body>
 
 </html>

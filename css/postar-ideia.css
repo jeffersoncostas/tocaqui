@@ -1,32 +1,32 @@
 * {
-	margin: 0;
-	padding: 0;
-	outline: none;
-	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    margin: 0;
+    padding: 0;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
 }
 
 
 @font-face {
-	font-family: quicksand'';
-	src: url("../font/Quicksand-Regular.otf");
-	font-style: normal;
+    font-family: quicksand'';
+    src: url("../font/Quicksand-Regular.otf");
+    font-style: normal;
 }
 
 @font-face {
-	font-family: 'karla';
-	src: url("../font/Karla-Regular.ttf");
-	font-style: normal;
+    font-family: 'karla';
+    src: url("../font/Karla-Regular.ttf");
+    font-style: normal;
 }
 
 html {
-	height: 100%;
+    height: 100%;
 
 }
 
 body {
-	font-family: quicksand;
-	height: 100%;
+    font-family: quicksand;
+    height: 100%;
 }
 
 /**/
@@ -34,45 +34,45 @@ body {
 /*loading*/
 
 .loadings {
-	z-index: 15;
-	position: fixed;
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
+    z-index: 15;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
 .loading-circle {
-	align-self: center;
-	z-index: 16;
-	position: absolute;
-	border-top: 5px solid #FF286D;
-	border-right: 5px solid #FF286D;
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
+    align-self: center;
+    z-index: 16;
+    position: absolute;
+    border-top: 5px solid #FF286D;
+    border-right: 5px solid #FF286D;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 
-	animation-fill-mode: backwards;
-	animation-duration: 2s;
-	animation-name: loading;
-	animation-iteration-count: infinite;
+    animation-fill-mode: backwards;
+    animation-duration: 2s;
+    animation-name: loading;
+    animation-iteration-count: infinite;
 }
 
 @keyframes loading {
-	0% {
-		transform: rotate(0deg)
-	}
-	100% {
-		transform: rotate(360deg)
-	}
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
 
 }
 
 .loading-background {
-	width: 100%;
-	position: fixed;
-	height: 100vh;
-	background-color: rgba(255, 255, 255, 0.74);
+    width: 100%;
+    position: fixed;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.74);
 }
 
 
@@ -80,62 +80,62 @@ body {
 
 .barra-pesquisa {
 
-	display: none;
-	z-index: 4;
-	width: 100%;
-	height: 120px;
-	background-color: #ededed;
-	position: fixed;
-	justify-content: center;
-	align-items: center;
-	transform: translateY(-60px);
-	transition: all 0.7s;
+    display: none;
+    z-index: 4;
+    width: 100%;
+    height: 120px;
+    background-color: #ededed;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-60px);
+    transition: all 0.7s;
 
 }
 
 .barra-pesquisa-active {
-	transform: translateY(60px);
+    transform: translateY(60px);
 }
 
 .barra-pesquisa span {
-	box-sizing: border-box;
-	display: block;
-	width: 100%;
-	padding: 20px;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 20px;
 }
 
 .barra-pesquisa form {
-	display: flex;
-	justify-content: center;
-	height: 100%;
-	width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 
 }
 
 .barra-pesquisa form input {
 
-	border-radius: 5px;
-	padding: 0px 50px;
-	box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0px 50px;
+    box-sizing: border-box;
 
-	width: calc(100% - 40px);
-	height: 40%;
-	border: none;
-	background-image: url(../vectors/lupa-pesquisar-rosa.svg);
-	background-repeat: no-repeat;
-	background-size: 30px;
+    width: calc(100% - 40px);
+    height: 40%;
+    border: none;
+    background-image: url(../vectors/lupa-pesquisar-rosa.svg);
+    background-repeat: no-repeat;
+    background-size: 30px;
 
-	background-position: 10px, 50%;
+    background-position: 10px, 50%;
 }
 
 
 .bg-barra-pesquisa {
-	display: none;
-	z-index: 2;
-	position: fixed;
-	width: 100%;
-	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.71);
+    display: none;
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.71);
 
 
 }
@@ -145,135 +145,135 @@ body {
 /* Menu sanduiche*/
 
 .menu-modal-bg {
-	display: none;
-	z-index: 9;
-	position: fixed;
-	width: 100%;
-	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.71);
+    display: none;
+    z-index: 9;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.71);
 }
 
 .menu-modal {
-	box-sizing: border-box;
-	user-select: none;
-	flex-wrap: wrap;
-	padding-top: 20px;
-	display: none;
-	z-index: 10;
-	position: fixed;
-	width: 70%;
-	height: 100vh;
-	transform: translateX(-500px);
-	background-color: #392e2d;
-	animation-duration: 0.6s;
-	animation-fill-mode: forwards;
-	animation-iteration-count: 1;
-	animation-name: surgir-menu-modal;
+    box-sizing: border-box;
+    user-select: none;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    display: none;
+    z-index: 10;
+    position: fixed;
+    width: 70%;
+    height: 100vh;
+    transform: translateX(-500px);
+    background-color: #392e2d;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-name: surgir-menu-modal;
 }
 
 
 @keyframes surgir-menu-modal {
-	from {
-		transform: translateX(-100%)
-	}
-	to {
-		transform: translateX(0px)
-	}
+    from {
+        transform: translateX(-100%)
+    }
+    to {
+        transform: translateX(0px)
+    }
 }
 
 @keyframes fechar-menu-modal {
-	to {
-		transform: translateX(-100%)
-	}
-	from {
-		transform: translateX(0px)
-	}
+    to {
+        transform: translateX(-100%)
+    }
+    from {
+        transform: translateX(0px)
+    }
 }
 
 
 
 .logo-simbolo {
-	display: flex;
-	width: 100%;
-	height: 90px;
-	justify-content: center;
+    display: flex;
+    width: 100%;
+    height: 90px;
+    justify-content: center;
 }
 
 .logo-simbolo img {
 
-	width: 90px;
-	height: 90px;
+    width: 90px;
+    height: 90px;
 }
 
 .user-name-menu {
-	position: absolute;
-	top: 110px;
-	display: flex;
-	justify-content: center;
-	width: 100%;
-	height: 50px;
-	color: white;
-	text-align: center;
+    position: absolute;
+    top: 110px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    color: white;
+    text-align: center;
 }
 
 .user-name-menu span {
-	align-self: center;
+    align-self: center;
 }
 
 .menu-modal #ul-menu {
-	position: absolute;
-	top: 170px;
-	width: 100%;
-	list-style: none;
+    position: absolute;
+    top: 170px;
+    width: 100%;
+    list-style: none;
 
 }
 
 .menu-modal #ul-menu li {
-	cursor: pointer;
-	box-sizing: border-box;
-	padding: 20px 20px 20px 80px;
-	font-size: 15px;
-	color: white;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 20px 20px 20px 80px;
+    font-size: 15px;
+    color: white;
 }
 
 .menu-modal #ul-menu #explorar-ideias {
-	background-color: ;
-	background-image: url('../vectors/explorar-icon-white.svg');
-	background-repeat: no-repeat;
-	background-size: 45px;
-	background-position: 10px, 50%;
+    background-color: ;
+    background-image: url('../vectors/explorar-icon-white.svg');
+    background-repeat: no-repeat;
+    background-size: 45px;
+    background-position: 10px, 50%;
 }
 
 #button-minhas-ideias {
-	background-color: #FF286D;
-	background-image: url('../vectors/lampada-icon-white.svg');
-	background-repeat: no-repeat;
-	background-size: 30px;
-	background-position: 15px, 50%;
+    background-color: #FF286D;
+    background-image: url('../vectors/lampada-icon-white.svg');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: 15px, 50%;
 
 }
 
 #button-li-mensagens {
-	background-image: url('../vectors/chat-icon-white.svg');
-	background-repeat: no-repeat;
-	background-size: 40px;
-	background-position: 10px, 50%;
+    background-image: url('../vectors/chat-icon-white.svg');
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: 10px, 50%;
 
 }
 
 #button-li-postar-nova-ideia {
-	background-image: url('../vectors/outras_ideias.svg');
-	background-repeat: no-repeat;
-	background-size: 40px;
-	background-position: 10px, 50%;
+    background-image: url('../vectors/outras_ideias.svg');
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: 10px, 50%;
 }
 
 #ul-minhas-ideias {
-	display: none;
+    display: none;
 }
 
 #ul-minhas-ideias .li-minhas-ideias {
-	background-color: #504140;
+    background-color: #504140;
 
 
 }
@@ -283,64 +283,64 @@ body {
 /*barra horizontal*/
 
 .barra-cima {
-	z-index: 4;
-	user-select: none;
-	box-sizing: border-box;
-	padding: 0px 20px;
-	position: fixed;
-	display: flex;
-	width: 100vw;
-	height: 60px;
-	background-color: #362c2b;
+    z-index: 4;
+    user-select: none;
+    box-sizing: border-box;
+    padding: 0px 20px;
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height: 60px;
+    background-color: #362c2b;
 }
 
 .barra-cima .menu-1 {
-	font-family: arial;
-	z-index: 1;
-	box-sizing: border-box;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	color: white;
-	font-size: 25px;
+    font-family: arial;
+    z-index: 1;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 25px;
 
 }
 
 .barra-cima .logo-tocaqui {
 
-	box-sizing: border-box;
-	display: flex;
-	position: absolute;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	justify-content: center;
+    box-sizing: border-box;
+    display: flex;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
 
 
 }
 
 .barra-cima .logo-tocaqui img {
-	height: 40px;
-	align-self: center;
+    height: 40px;
+    align-self: center;
 
 }
 
 .barra-cima .pesquisar {
 
-	display: flex;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	left: 0;
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
 }
 
 .barra-cima .pesquisar img {
-	cursor: pointer;
-	padding-right: 20px;
-	position: absolute;
-	right: 0;
-	align-self: center;
-	height: 25px;
+    cursor: pointer;
+    padding-right: 20px;
+    position: absolute;
+    right: 0;
+    align-self: center;
+    height: 25px;
 
 
 }
@@ -349,165 +349,187 @@ body {
 
 /*Postar ideia*/
 
+.botao-cancelar-postar {
+    font-variant: small-caps;
+    background-color: transparent;
+    position: absolute;
+    padding: 10px;
+    border-radius: 50%;
+    width: 11px;
+    height: 11px;
+    right: 20px;
+    top: 9%;
+    display: flex;
+    background-color: #fc1f49;
+    box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.66);
+
+}
+
+.botao-cancelar-postar span {
+
+    align-self: center;
+
+}
+
 .postar-ideia-content {
-	box-sizing: border-box;
-	padding: 60px 20px 20px;
-	width: 100%;
-	background-color: rgb(54, 44, 43);
-	color: white;
+    box-sizing: border-box;
+    padding: 60px 20px 20px;
+    width: 100%;
+    background-color: rgb(54, 44, 43);
+    color: white;
 }
 
 .titulo-ideia-content {
 
-	display: flex;
-	justify-content: center;
-	height: 60px;
-	font-size: 24px;
-	text-align: center;
-	border-bottom: 2px solid #FFAC1C;
-	margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    font-size: 24px;
+    text-align: center;
+    border-bottom: 2px solid #FFAC1C;
+    margin-bottom: 90px;
 }
 
 .titulo-ideia-content span {
-	align-self: center;
+    align-self: center;
 }
 
 .titulo2-ideia-content {
-	display: flex;
-	justify-content: center;
-	height: 60px;
-	font-size: 26px;
-	margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    font-size: 26px;
+    margin-bottom: 40px;
 }
 
 .titulo2-lista-ideia span {
-	align-self: center;
+    align-self: center;
 }
 
 .postar-ideia-content form {
-	width: 100%;
+    width: 100%;
 
 }
 
 .titulos-input-ideia-content {
-	display: inline-block;
-	font-size: 18px;
-	margin-bottom: 10px;
+    display: inline-block;
+    font-size: 18px;
+    margin-bottom: 10px;
 
 }
 
 select {
-	border-radius: 5px;
-	border: none;
-	user-select: none;
-	box-sizing: border-box;
-	padding: 20px;
-	display: block;
-	background-color: #2a2222;
-	color: white;
-	width: 100%;
-	height: 60px;
-	font-size: 15px;
-	margin-bottom: 25px;
+    border-radius: 5px;
+    border: none;
+    user-select: none;
+    box-sizing: border-box;
+    padding: 20px;
+    display: block;
+    background-color: #2a2222;
+    color: white;
+    width: 100%;
+    height: 60px;
+    font-size: 15px;
+    margin-bottom: 25px;
 
 }
 
 option {
-	height: 60px;
+    height: 60px;
 }
 
 .postar-ideia-content form input {
 
-	padding: 20px;
-	box-sizing: border-box;
-	font-size: 15px;
-	border: none;
-	width: 100%;
-	height: 60px;
-	background-color: #2a2222;
-	border-radius: 5px;
-	margin-bottom: 25px;
-	transition: all 0.1s;
-	color: white;
-	resize: none;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 15px;
+    border: none;
+    width: 100%;
+    height: 60px;
+    background-color: #2a2222;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    transition: all 0.1s;
+    color: white;
+    resize: none;
 
 }
 
 
 #id-descricao-postar-ideia {
-	height: 100px;
+    height: 100px;
 
 }
 
 .postar-ideia-content form input:focus {
-	border: 2px solid white;
-	transition: all 0.7s;
+    border: 2px solid white;
+    transition: all 0.7s;
 
 }
 
 .postar-ideia-content form input::placeholder {
-	color: rgba(255, 255, 255, 0.67);
+    color: rgba(255, 255, 255, 0.67);
 
 }
 
 textarea {
-	resize: none;
+    resize: none;
 
-	border: none;
-	font-family: karla;
-	font-size: 15px;
-	max-width: 100%;
-	box-sizing: border-box;
-	padding: 15px;
-	background-color: #2a2222;
-	height: 120px;
-	color: white;
-	border-radius: 5px;
-	margin-bottom: 25px;
-	transition: all 0.1s;
-	color: white;
+    border: none;
+    font-family: karla;
+    font-size: 15px;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #2a2222;
+    height: 120px;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    transition: all 0.1s;
+    color: white;
 }
 
 textarea:focus {
-	border: 2px solid white;
-	transition: all 0.7s;
+    border: 2px solid white;
+    transition: all 0.7s;
 
 }
 
 .erros-modal-login {
-	position: relative;
-	width: 100%;
-	height: 50px;
-	background-color: #f8253d;
-	display: none;
-	border: none;
-	color: white;
-	margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: #f8253d;
+    display: none;
+    border: none;
+    color: white;
+    margin-bottom: 20px;
 
 }
 
 .erros-modal-login span {
-	text-align: center;
-	width: 100%;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	font-size: 17px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 17px;
 }
 
 .button-postar-ideia-content {
-	user-select: none;
-	cursor: pointer;
-	border-radius: 5px;
-	display: flex;
-	justify-content: center;
-	font-size: 20px;
-	background-color: #eb9642;
-	font-variant-caps: all-small-caps;
-	height: 60px;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    background-color: #eb9642;
+    font-variant-caps: all-small-caps;
+    height: 60px;
 }
 
 .button-postar-ideia-content span {
-	align-self: center;
+    align-self: center;
 }
